@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "rosegoldequipment:block/rosegold_block"
+  }
+}

@@ -1,0 +1,44 @@
+{
+	"schemaVersion": 1,
+	"id": "rose-gold-equipment",
+	"version": "${version}",
+	"name": "Rose Gold Equipment",
+	"description": "Adds Rose Gold Ingots and accompanying equipment! Made By IGoByJake [Jeejeekay]",
+	"authors": [
+		"IGoByJake"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/rose-gold-equipment/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"jeejeekay.rosegoldequipment.RoseGoldEquipment"
+		],
+		"client": [
+			"jeejeekay.rosegoldequipment.RoseGoldEquipmentClient"
+		],
+		"fabric-datagen": [
+			"jeejeekay.rosegoldequipment.RoseGoldEquipmentDataGenerator"
+		]
+	},
+	"mixins": [
+		"rose-gold-equipment.mixins.json",
+		{
+			"config": "rose-gold-equipment.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.14.21",
+		"minecraft": "~1.20",
+		"java": ">=17",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}

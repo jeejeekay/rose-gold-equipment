@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left",
+  "textures": {
+    "bottom": "rosegoldequipment:block/rose_gold_door_bottom",
+    "top": "rosegoldequipment:block/rose_gold_door_top"
+  }
+}

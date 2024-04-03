@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "g": {
+      "item": "minecraft:gold_ingot"
+    },
+    "c": {
+      "item": "minecraft:copper_ingot"
+    }
+  },
+  "pattern": [
+    " c ",
+    "cgc",
+    " c "
+  ],
+  "result": {
+    "count": 2,
+    "item": "rosegoldequipment:raw_rose_gold"
+  }
+}
