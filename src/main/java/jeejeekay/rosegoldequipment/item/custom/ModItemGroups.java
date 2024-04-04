@@ -21,11 +21,13 @@ public class ModItemGroups {
                     .icon(() -> new ItemStack(ModItems.ROSE_GOLD_INGOT)).entries((displayContext, entries) -> {
                         entries.add(ModItems.ROSE_GOLD_INGOT);
                         entries.add(ModItems.RAW_ROSE_GOLD);
+
                         entries.add(ModItems.ROSE_GOLDEN_PICKAXE);
                         entries.add(ModItems.ROSE_GOLDEN_AXE);
                         entries.add(ModItems.ROSE_GOLDEN_HOE);
                         entries.add(ModItems.ROSE_GOLDEN_SHOVEL);
                         entries.add(ModItems.ROSE_GOLDEN_SWORD);
+
                         entries.add(ModItems.ROSE_GOLDEN_HELMET);
                         entries.add(ModItems.ROSE_GOLDEN_CHESTPLATE);
                         entries.add(ModItems.ROSE_GOLDEN_LEGGINGS);

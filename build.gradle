@@ -48,7 +48,6 @@ dependencies {
 
 	// modImplementation "net.fabricmc.fabric-api:fabric-api-deprecated:${project.fabric_version}"
 }
-
 processResources {
 	inputs.property "version", project.version
 
@@ -72,6 +71,7 @@ java {
 }
 
 jar {
+	duplicatesStrategy(DuplicatesStrategy.EXCLUDE)
 	from("LICENSE") {
 		rename { "${it}_${project.base.archivesName.get()}"}
 	}

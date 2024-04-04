@@ -42,16 +42,16 @@ public class ModItems {
     //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
     public static final Item ROSE_GOLDEN_PICKAXE = registerItem("rose_golden_pickaxe",
-            new PickaxeItem(ModToolMaterials.ROSEGOLD, 1,-2.8f,
+            new PickaxeItem(ModToolMaterials.ROSEGOLD, 4,-2.8f,
             new FabricItemSettings()));
     public static final Item ROSE_GOLDEN_SHOVEL = registerItem("rose_golden_shovel",
-            new ShovelItem(ModToolMaterials.ROSEGOLD,1,-3f,
+            new ShovelItem(ModToolMaterials.ROSEGOLD,2,-3f,
             new FabricItemSettings()));
     public static final Item ROSE_GOLDEN_AXE = registerItem("rose_golden_axe",
-            new AxeItem(ModToolMaterials.ROSEGOLD,2,-3f,
+            new AxeItem(ModToolMaterials.ROSEGOLD,4,-3f,
                     new FabricItemSettings()));
     public static final Item ROSE_GOLDEN_HOE = registerItem("rose_golden_hoe",
-            new HoeItem(ModToolMaterials.ROSEGOLD,2,-3f,
+            new HoeItem(ModToolMaterials.ROSEGOLD,0,-2f,
                     new FabricItemSettings()));
     public static final Item ROSE_GOLDEN_SWORD = registerItem("rose_golden_sword",
             new SwordItem(ModToolMaterials.ROSEGOLD,3,-2.4f,

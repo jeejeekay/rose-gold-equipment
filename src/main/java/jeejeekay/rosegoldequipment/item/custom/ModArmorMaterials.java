@@ -11,7 +11,7 @@ import net.minecraft.util.Lazy;
 import java.util.function.Supplier;
 
 public enum ModArmorMaterials implements ArmorMaterial {
-    ROSEGOLD("rosegold", 10, new int[]{2, 5, 5, 2}, 17, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 0.0f, 0.0f, () -> Ingredient.ofItems(ModItems.ROSE_GOLD_INGOT));
+    ROSEGOLD("rosegold", 10, new int[]{2, 5, 5, 2}, 17, SoundEvents.ITEM_ARMOR_EQUIP_GOLD, 0.0f, 0.0f, () -> Ingredient.ofItems(ModItems.ROSE_GOLD_INGOT));
     private static final int[] BASE_DURABILITY;
     private final String name;
     private final int durabilityMultiplier;
