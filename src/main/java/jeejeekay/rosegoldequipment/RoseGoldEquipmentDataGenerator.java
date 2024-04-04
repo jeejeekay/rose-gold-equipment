@@ -1,9 +1,8 @@
 package jeejeekay.rosegoldequipment;
 
+import jeejeekay.rosegoldequipment.datagen.*;
 import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
-import jeejeekay.rosegoldequipment.datagen.ModItemTagProvider;
-import jeejeekay.rosegoldequipment.datagen.ModModelProvider;
 
 public class RoseGoldEquipmentDataGenerator implements DataGeneratorEntrypoint {
 	@Override
@@ -12,5 +11,8 @@ public class RoseGoldEquipmentDataGenerator implements DataGeneratorEntrypoint {
 
 		pack.addProvider(ModItemTagProvider::new);
 		pack.addProvider(ModModelProvider::new);
+		pack.addProvider(ModBlockTagProvider::new);
+		pack.addProvider(ModLootTableProvider::new);
+		pack.addProvider(ModRecipeProvider::new);
 	}
 }

@@ -1,0 +1,5 @@
+// 1.20	2024-04-03T23:08:37.6701008	Rose Gold Equipment/Block Loot Tables
+f23ba8278532f0bab3542c122e369a28b71579c1 data\rosegoldequipment\loot_tables\blocks\rose_gold_block.json
+e2c6177e96e0755dff28ed1eb6dca7483279befa data\rosegoldequipment\loot_tables\blocks\raw_rose_gold_block.json
+cf0216b264e011823f59d737fae937e33cc718e6 data\rosegoldequipment\loot_tables\blocks\rose_gold_door.json
+f317a7c83bd5094e5ea1692d2e07378cf5558e80 data\rosegoldequipment\loot_tables\blocks\rose_gold_trapdoor.json
