@@ -1,0 +1,40 @@
+{
+	"schemaVersion": 1,
+	"id": "rosegoldequipment",
+	"version": "${version}",
+	"name": "Rose Gold Equipment",
+	"description": "A mod that adds Rose Gold Equipment and Items!",
+	"authors": [
+		"IGoByJake"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "MIT",
+	"icon": "assets/rosegoldequipment/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"net.igobyjake.rosegoldequipment.rosegoldequipment"
+		],
+		"fabric-datagen": [
+			"net.igobyjake.rosegoldequipment.rosegoldequipmentdatagenerator"
+		],
+		"client": [
+			"net.igobyjake.rosegoldequipment.rosegoldequipmentclient"
+		]
+	},
+	"mixins": [
+		"rosegoldequipment.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.11",
+		"minecraft": "~1.21",
+		"java": ">=21",
+		"fabric-api": "*"
+	},
+	"suggests": {
+		"another-mod": "*"
+	}
+}
