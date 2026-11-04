@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.Block;
 
 public class ModTags {
     public static class Blocks {
-        public static final TagKey<Block> NEEDS_ROSE_GOLD_TOOL = createTag("needs_rose_gold_tool");
+        /** Blocks rose gold tools can NOT mine (same as iron: anything needing diamond or better). */
         public static final TagKey<Block> INCORRECT_FOR_ROSE_GOLD_TOOL = createTag("incorrect_for_rose_gold_tool");
 
         private static TagKey<Block> createTag(String name) {
@@ -19,7 +19,7 @@ public class ModTags {
     }
 
     public static class Items {
-        public static final TagKey<Item> TRANSFORMABLE_ITEMS = createTag("transformable_items");
+        /** Items that repair rose gold tools and armor in an anvil. */
         public static final TagKey<Item> ROSE_GOLD_REPAIRABLE = createTag("rose_gold_repairable");
 
         private static TagKey<Item> createTag(String name) {

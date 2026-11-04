@@ -1,7 +1,4 @@
 {
-  "remove": [
-    "#rosegoldequipment:needs_rose_gold_tool"
-  ],
   "values": [
     "#minecraft:incorrect_for_iron_tool"
   ]

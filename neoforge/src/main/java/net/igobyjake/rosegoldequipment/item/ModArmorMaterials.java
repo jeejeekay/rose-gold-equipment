@@ -14,8 +14,8 @@ import net.minecraft.world.item.equipment.EquipmentAsset;
 import java.util.EnumMap;
 
 public class ModArmorMaterials {
-    static ResourceKey<? extends Registry<EquipmentAsset>> ROOT_ID = ResourceKey.createRegistryKey(Identifier.withDefaultNamespace("equipment_asset"));
-    public static ResourceKey<EquipmentAsset> ROSE_GOLD = ResourceKey.create(ROOT_ID, Identifier.fromNamespaceAndPath(rosegoldequipment.MOD_ID, "rose_gold"));
+    public static final ResourceKey<? extends Registry<EquipmentAsset>> ROOT_ID = ResourceKey.createRegistryKey(Identifier.withDefaultNamespace("equipment_asset"));
+    public static final ResourceKey<EquipmentAsset> ROSE_GOLD = ResourceKey.create(ROOT_ID, Identifier.fromNamespaceAndPath(rosegoldequipment.MOD_ID, "rose_gold"));
 
     public static final ArmorMaterial ROSE_GOLD_ARMOR_MATERIAL = new ArmorMaterial(20,
             Util.make(new EnumMap<>(ArmorType.class), attribute -> {

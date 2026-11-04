@@ -1,9 +1,0 @@
-// 1.21.11	2026-01-08T18:37:12.608569	Tags for minecraft:item mod id rosegoldequipment
-72a330e2dc28f5f491caed57d8c88b9cbc1ca061 data/minecraft/tags/item/axes.json
-d8aa24b4273eba9372efed6b2fe3c797f0485bce data/minecraft/tags/item/hoes.json
-068c1424ae121c029a890271a14473fc8dc54b2b data/minecraft/tags/item/pickaxes.json
-963b42e0a1e77508da0810e7ed9a6f520bdc4dbb data/minecraft/tags/item/shovels.json
-29bd02f4bbe1c40968e6a11e77cfe7595f33b3ef data/minecraft/tags/item/swords.json
-9acb0a596c2ceca937c45374eff7faedb2b6b285 data/minecraft/tags/item/trimmable_armor.json
-da29c9384948abfbbe87d320a95d3b24a70a1070 data/minecraft/tags/item/trim_materials.json
-da29c9384948abfbbe87d320a95d3b24a70a1070 data/rosegoldequipment/tags/item/rose_gold_repairable.json

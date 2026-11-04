@@ -2,7 +2,6 @@
   "item.rosegoldequipment.rose_gold_ingot": "Rose Gold Ingot",
   "item.rosegoldequipment.rose_gold_nugget": "Rose Gold Nugget",
   "item.rosegoldequipment.raw_rose_gold": "Raw Rose Gold",
-
   "item.rosegoldequipment.rose_gilded_beetroot": "Rose Gilded Beetroot",
   "item.rosegoldequipment.rose_gilded_mushroom": "Rose Gilded Mushroom",
   "item.rosegoldequipment.rosey_beetroot_stew": "Rosey Veggie Stew",
@@ -12,26 +11,19 @@
   "item.rosegoldequipment.rose_mushroom_crumbs": "Leftover Mushroom Eggs",
   "item.rosegoldequipment.rose_full_jelly": "Rose Gold Jelly",
   "item.rosegoldequipment.rose_half_jelly": "Half Eaten Jelly",
-
-
   "item.rosegoldequipment.rose_golden_pickaxe": "Rose Gold Pickaxe",
   "item.rosegoldequipment.rose_golden_shovel": "Rose Gold Shovel",
   "item.rosegoldequipment.rose_golden_axe": "Rose Gold Axe",
   "item.rosegoldequipment.rose_golden_hoe": "Rose Gold Hoe",
   "item.rosegoldequipment.rose_golden_sword": "Rose Gold Sword",
-
   "item.rosegoldequipment.rose_golden_helmet": "Rose Gold Helmet",
   "item.rosegoldequipment.rose_golden_chestplate": "Rose Gold Chestplate",
   "item.rosegoldequipment.rose_golden_leggings": "Rose Gold Leggings",
   "item.rosegoldequipment.rose_golden_boots": "Rose Gold Boots",
-
   "block.rosegoldequipment.rose_gold_block": "Block of Rose Gold",
   "block.rosegoldequipment.raw_rose_gold_block": "Block of Raw Rose Gold",
   "block.rosegoldequipment.rose_gold_door": "Rose Gold Door",
   "block.rosegoldequipment.rose_gold_trapdoor": "Rose Gold Trapdoor",
-
   "trim_material.rosegoldequipment.rose_gold": "Rose Gold Material",
-
-  "itemgroup.rosegoldequipment.rose_gold_group": "Rose Gold Equipment",
-  "creativetab.rosegoldequipment.rose_gold_items_tab": "Rose Gold Equipment"
+  "itemgroup.rosegoldequipment.rose_gold_group": "Rose Gold Equipment"
 }

@@ -2,7 +2,6 @@ package net.igobyjake.rosegoldequipment.datagen;
 
 import net.igobyjake.rosegoldequipment.rosegoldequipment;
 import net.igobyjake.rosegoldequipment.block.ModBlocks;
-import net.igobyjake.rosegoldequipment.item.ModArmorMaterials;
 import net.igobyjake.rosegoldequipment.item.ModItems;
 import net.minecraft.client.data.models.BlockModelGenerators;
 import net.minecraft.client.data.models.ItemModelGenerators;
@@ -37,13 +36,12 @@ public class ModModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ModItems.ROSE_GOLDEN_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.ROSE_GOLDEN_HOE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
 
-        itemModels.generateTrimmableItem(ModItems.ROSE_GOLDEN_HELMET.get(), ModArmorMaterials.ROSE_GOLD, ItemModelGenerators.TRIM_PREFIX_HELMET, false);
-        itemModels.generateTrimmableItem(ModItems.ROSE_GOLDEN_CHESTPLATE.get(), ModArmorMaterials.ROSE_GOLD, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE, false);
-        itemModels.generateTrimmableItem(ModItems.ROSE_GOLDEN_LEGGINGS.get(), ModArmorMaterials.ROSE_GOLD, ItemModelGenerators.TRIM_PREFIX_LEGGINGS, false);
-        itemModels.generateTrimmableItem(ModItems.ROSE_GOLDEN_BOOTS.get(), ModArmorMaterials.ROSE_GOLD, ItemModelGenerators.TRIM_PREFIX_BOOTS,  false);
+        TrimmedArmorModels.generate(itemModels, ModItems.ROSE_GOLDEN_HELMET.get(), ItemModelGenerators.TRIM_PREFIX_HELMET);
+        TrimmedArmorModels.generate(itemModels, ModItems.ROSE_GOLDEN_CHESTPLATE.get(), ItemModelGenerators.TRIM_PREFIX_CHESTPLATE);
+        TrimmedArmorModels.generate(itemModels, ModItems.ROSE_GOLDEN_LEGGINGS.get(), ItemModelGenerators.TRIM_PREFIX_LEGGINGS);
+        TrimmedArmorModels.generate(itemModels, ModItems.ROSE_GOLDEN_BOOTS.get(), ItemModelGenerators.TRIM_PREFIX_BOOTS);
 
         /* BLOCKS */
-        //blockModels.createTrivialCube(ModBlocks.ROSE_GOLD_BLOCK.get());
         blockModels.createTrivialCube(ModBlocks.RAW_ROSE_GOLD_BLOCK.get());
 
         blockModels.family(ModBlocks.ROSE_GOLD_BLOCK.get())

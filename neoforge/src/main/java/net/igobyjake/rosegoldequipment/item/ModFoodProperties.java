@@ -8,8 +8,6 @@ import net.minecraft.world.item.component.Consumables;
 import net.minecraft.world.item.consume_effects.ApplyStatusEffectsConsumeEffect;
 
 public class ModFoodProperties {
-  /*  public static final FoodProperties RADISH = new FoodProperties.Builder().nutrition(3).saturationModifier(0.25f).build();
-*/
   public static final FoodProperties ROSE_GILDED_BEETROOT = new FoodProperties.Builder().nutrition(6).saturationModifier(.6f)
           .alwaysEdible().build();
     public static final FoodProperties ROSEY_BEETROOT_STEW = new FoodProperties.Builder().nutrition(14).saturationModifier(1.0f)

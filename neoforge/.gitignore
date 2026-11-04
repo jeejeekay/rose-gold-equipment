@@ -24,3 +24,5 @@ runs
 run-data
 
 repo
+# datagen cache (regenerated every run)
+src/generated/resources/.cache/

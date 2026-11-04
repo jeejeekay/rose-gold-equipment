@@ -2,7 +2,6 @@ package net.igobyjake.rosegoldequipment.item;
 
 import net.igobyjake.rosegoldequipment.rosegoldequipment;
 import net.igobyjake.rosegoldequipment.block.ModBlocks;
-import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -18,7 +17,7 @@ public class ModCreativeModeTabs {
 
     public static final Supplier<CreativeModeTab> ROSE_GOLD_ITEMS_TAB = CREATIVE_MODE_TAB.register("rose_gold_items_tab",
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ROSE_GOLD_INGOT.get()))
-                    .title(Component.translatable("creativetab.rosegoldequipment.rose_gold_items_tab"))
+                    .title(Component.translatable("itemgroup.rosegoldequipment.rose_gold_group"))
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.ROSE_GOLD_INGOT);
                         output.accept(ModItems.ROSE_GOLD_NUGGET);
