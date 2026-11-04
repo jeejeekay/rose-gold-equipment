@@ -1,6 +1,6 @@
 package net.igobyjake.rosegoldequipment.block;
 
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.igobyjake.rosegoldequipment.rosegoldequipment;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -42,7 +42,7 @@ public class ModBlocks {
         rosegoldequipment.LOGGER.info("Registering blocks for " + rosegoldequipment.MOD_ID);
 
         // Also list the blocks in the vanilla Building Blocks tab.
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(entries -> {
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.BUILDING_BLOCKS).register(entries -> {
             entries.accept(ROSE_GOLD_BLOCK);
             entries.accept(RAW_ROSE_GOLD_BLOCK);
         });

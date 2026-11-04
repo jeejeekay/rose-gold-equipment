@@ -1,6 +1,6 @@
 package net.igobyjake.rosegoldequipment.item;
 
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.igobyjake.rosegoldequipment.rosegoldequipment;
 import net.igobyjake.rosegoldequipment.trim.ModTrimMaterials;
 import net.minecraft.core.Registry;
@@ -86,7 +86,7 @@ public class ModItems {
         rosegoldequipment.LOGGER.info("Registering items for " + rosegoldequipment.MOD_ID);
 
         // Also list the basics in the vanilla Ingredients tab.
-        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.INGREDIENTS).register(entries -> {
+        CreativeModeTabEvents.modifyOutputEvent(CreativeModeTabs.INGREDIENTS).register(entries -> {
             entries.accept(ROSE_GOLD_INGOT);
             entries.accept(ROSE_GOLD_NUGGET);
             entries.accept(RAW_ROSE_GOLD);

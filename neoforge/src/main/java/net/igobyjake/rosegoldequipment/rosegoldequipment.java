@@ -4,16 +4,10 @@ import com.mojang.logging.LogUtils;
 import net.igobyjake.rosegoldequipment.block.ModBlocks;
 import net.igobyjake.rosegoldequipment.item.ModCreativeModeTabs;
 import net.igobyjake.rosegoldequipment.item.ModItems;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.chunk.ChunkSectionLayer;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.IEventBus;
-import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
-import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.fml.common.Mod;
-import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
 import net.neoforged.neoforge.event.BuildCreativeModeTabContentsEvent;
 import org.slf4j.Logger;
 
@@ -41,16 +35,6 @@ public class rosegoldequipment {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.ROSE_GOLD_BLOCK);
             event.accept(ModBlocks.RAW_ROSE_GOLD_BLOCK);
-        }
-    }
-
-    @EventBusSubscriber(modid = MOD_ID, value = Dist.CLIENT)
-    public static class ClientModEvents {
-        @SubscribeEvent
-        public static void onClientSetup(FMLClientSetupEvent event) {
-            // Doors/trapdoors have see-through pixels. (From 26.1 on, Minecraft works this out by itself.)
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ROSE_GOLD_DOOR.get(), ChunkSectionLayer.CUTOUT);
-            ItemBlockRenderTypes.setRenderLayer(ModBlocks.ROSE_GOLD_TRAPDOOR.get(), ChunkSectionLayer.CUTOUT);
         }
     }
 }

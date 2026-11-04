@@ -1,6 +1,6 @@
 package net.igobyjake.rosegoldequipment.item;
 
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.fabricmc.fabric.api.creativetab.v1.FabricCreativeModeTab;
 import net.igobyjake.rosegoldequipment.rosegoldequipment;
 import net.igobyjake.rosegoldequipment.block.ModBlocks;
 import net.minecraft.core.Registry;
@@ -13,7 +13,7 @@ import net.minecraft.world.item.ItemStack;
 public class ModItemGroups {
     public static final CreativeModeTab ROSE_GOLD_ITEMS_GROUP = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB,
             Identifier.fromNamespaceAndPath(rosegoldequipment.MOD_ID, "rose_gold_group"),
-            FabricItemGroup.builder().icon(() -> new ItemStack(ModItems.ROSE_GOLD_INGOT))
+            FabricCreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ROSE_GOLD_INGOT))
                     .title(Component.translatable("itemgroup.rosegoldequipment.rose_gold_group"))
                     .displayItems((parameters, output) -> {
                         output.accept(ModItems.ROSE_GOLD_INGOT);

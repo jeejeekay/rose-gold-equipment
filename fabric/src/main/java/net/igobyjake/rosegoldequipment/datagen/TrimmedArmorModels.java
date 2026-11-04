@@ -8,6 +8,7 @@ import net.minecraft.client.data.models.model.ModelTemplates;
 import net.minecraft.client.data.models.model.TextureMapping;
 import net.minecraft.client.renderer.item.SelectItemModel;
 import net.minecraft.client.renderer.item.properties.select.TrimMaterialProperty;
+import net.minecraft.client.resources.model.sprite.Material;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
@@ -21,7 +22,7 @@ import java.util.List;
  *
  * Vanilla's ItemModelGenerators#generateTrimmableItem only knows the vanilla trim
  * materials, so a rose gold helmet trimmed WITH rose gold would show no trim on its
- * icon. This does the same thing as vanilla (Minecraft 1.21.11 version), plus one
+ * icon. This does the same thing as vanilla (Minecraft 26.1/26.2 version), plus one
  * extra case for our own rose gold trim material.
  *
  * Identical file in fabric/ and neoforge/ — it only uses vanilla classes.
@@ -31,7 +32,7 @@ public final class TrimmedArmorModels {
 
     public static void generate(ItemModelGenerators generators, Item armor, Identifier slotTrimPrefix) {
         Identifier modelLocation = ModelLocationUtils.getModelLocation(armor);
-        Identifier itemTexture = TextureMapping.getItemTexture(armor);
+        Material itemTexture = TextureMapping.getItemTexture(armor);
 
         List<SelectItemModel.SwitchCase<ResourceKey<TrimMaterial>>> cases = new ArrayList<>();
         for (ItemModelGenerators.TrimMaterialData material : ItemModelGenerators.TRIM_MATERIAL_MODELS) {
@@ -48,10 +49,10 @@ public final class TrimmedArmorModels {
     }
 
     private static SelectItemModel.SwitchCase<ResourceKey<TrimMaterial>> trimCase(
-            ItemModelGenerators generators, Identifier modelLocation, Identifier itemTexture,
+            ItemModelGenerators generators, Identifier modelLocation, Material itemTexture,
             Identifier slotTrimPrefix, String suffix, ResourceKey<TrimMaterial> material) {
         Identifier trimModel = modelLocation.withSuffix("_" + suffix + "_trim");
-        generators.generateLayeredItem(trimModel, itemTexture, slotTrimPrefix.withSuffix("_" + suffix));
+        generators.generateLayeredItem(trimModel, itemTexture, new Material(slotTrimPrefix.withSuffix("_" + suffix)));
         return ItemModelUtils.when(material, ItemModelUtils.plainModel(trimModel));
     }
 }
