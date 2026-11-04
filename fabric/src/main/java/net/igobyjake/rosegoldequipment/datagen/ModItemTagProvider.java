@@ -5,7 +5,10 @@ import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.igobyjake.rosegoldequipment.item.ModItems;
 import net.igobyjake.rosegoldequipment.util.ModTags;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.tags.ItemTags;
+import net.minecraft.world.item.Item;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -16,22 +19,27 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        valueLookupBuilder(ModTags.Items.ROSE_GOLD_REPAIRABLE).add(ModItems.ROSE_GOLD_INGOT);
+        tag(ModTags.Items.ROSE_GOLD_REPAIRABLE).add(key(ModItems.ROSE_GOLD_INGOT));
 
-        valueLookupBuilder(ItemTags.SWORDS).add(ModItems.ROSE_GOLDEN_SWORD);
-        valueLookupBuilder(ItemTags.PICKAXES).add(ModItems.ROSE_GOLDEN_PICKAXE);
-        valueLookupBuilder(ItemTags.SHOVELS).add(ModItems.ROSE_GOLDEN_SHOVEL);
-        valueLookupBuilder(ItemTags.AXES).add(ModItems.ROSE_GOLDEN_AXE);
-        valueLookupBuilder(ItemTags.HOES).add(ModItems.ROSE_GOLDEN_HOE);
+        tag(ItemTags.SWORDS).add(key(ModItems.ROSE_GOLDEN_SWORD));
+        tag(ItemTags.PICKAXES).add(key(ModItems.ROSE_GOLDEN_PICKAXE));
+        tag(ItemTags.SHOVELS).add(key(ModItems.ROSE_GOLDEN_SHOVEL));
+        tag(ItemTags.AXES).add(key(ModItems.ROSE_GOLDEN_AXE));
+        tag(ItemTags.HOES).add(key(ModItems.ROSE_GOLDEN_HOE));
 
         // Vanilla builds "trimmable armor" and the armor enchanting tags from these four,
         // so this one step makes the armor trimmable AND enchantable.
-        valueLookupBuilder(ItemTags.HEAD_ARMOR).add(ModItems.ROSE_GOLDEN_HELMET);
-        valueLookupBuilder(ItemTags.CHEST_ARMOR).add(ModItems.ROSE_GOLDEN_CHESTPLATE);
-        valueLookupBuilder(ItemTags.LEG_ARMOR).add(ModItems.ROSE_GOLDEN_LEGGINGS);
-        valueLookupBuilder(ItemTags.FOOT_ARMOR).add(ModItems.ROSE_GOLDEN_BOOTS);
+        tag(ItemTags.HEAD_ARMOR).add(key(ModItems.ROSE_GOLDEN_HELMET));
+        tag(ItemTags.CHEST_ARMOR).add(key(ModItems.ROSE_GOLDEN_CHESTPLATE));
+        tag(ItemTags.LEG_ARMOR).add(key(ModItems.ROSE_GOLDEN_LEGGINGS));
+        tag(ItemTags.FOOT_ARMOR).add(key(ModItems.ROSE_GOLDEN_BOOTS));
 
         // Lets the ingot go in the smithing table's material slot.
-        valueLookupBuilder(ItemTags.TRIM_MATERIALS).add(ModItems.ROSE_GOLD_INGOT);
+        tag(ItemTags.TRIM_MATERIALS).add(key(ModItems.ROSE_GOLD_INGOT));
+    }
+
+    // Since 26.2, tags are built from registry keys instead of the item objects.
+    private static ResourceKey<Item> key(Item item) {
+        return BuiltInRegistries.ITEM.getResourceKey(item).orElseThrow();
     }
 }

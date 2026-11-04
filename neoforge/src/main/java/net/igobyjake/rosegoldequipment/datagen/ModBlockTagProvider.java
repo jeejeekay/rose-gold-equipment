@@ -20,17 +20,17 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         // Pickaxe mines these. The door/trapdoor need this too, otherwise they drop nothing
         // (they "require the correct tool", and without this there is no correct tool).
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
-                .add(ModBlocks.ROSE_GOLD_BLOCK.get())
-                .add(ModBlocks.RAW_ROSE_GOLD_BLOCK.get())
-                .add(ModBlocks.ROSE_GOLD_DOOR.get())
-                .add(ModBlocks.ROSE_GOLD_TRAPDOOR.get());
+                .add(ModBlocks.ROSE_GOLD_BLOCK.getKey())
+                .add(ModBlocks.RAW_ROSE_GOLD_BLOCK.getKey())
+                .add(ModBlocks.ROSE_GOLD_DOOR.getKey())
+                .add(ModBlocks.ROSE_GOLD_TRAPDOOR.getKey());
 
         tag(BlockTags.NEEDS_IRON_TOOL)
-                .add(ModBlocks.ROSE_GOLD_BLOCK.get())
-                .add(ModBlocks.RAW_ROSE_GOLD_BLOCK.get());
+                .add(ModBlocks.ROSE_GOLD_BLOCK.getKey())
+                .add(ModBlocks.RAW_ROSE_GOLD_BLOCK.getKey());
 
-        tag(BlockTags.DOORS).add(ModBlocks.ROSE_GOLD_DOOR.get());
-        tag(BlockTags.TRAPDOORS).add(ModBlocks.ROSE_GOLD_TRAPDOOR.get());
+        tag(BlockTags.DOORS).add(ModBlocks.ROSE_GOLD_DOOR.getKey());
+        tag(BlockTags.TRAPDOORS).add(ModBlocks.ROSE_GOLD_TRAPDOOR.getKey());
 
         // Rose gold tools mine like iron.
         tag(ModTags.Blocks.INCORRECT_FOR_ROSE_GOLD_TOOL)

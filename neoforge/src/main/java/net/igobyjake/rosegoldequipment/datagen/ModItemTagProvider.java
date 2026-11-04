@@ -17,22 +17,22 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
-        tag(ModTags.Items.ROSE_GOLD_REPAIRABLE).add(ModItems.ROSE_GOLD_INGOT.get());
+        tag(ModTags.Items.ROSE_GOLD_REPAIRABLE).add(ModItems.ROSE_GOLD_INGOT.getKey());
 
-        tag(ItemTags.SWORDS).add(ModItems.ROSE_GOLDEN_SWORD.get());
-        tag(ItemTags.PICKAXES).add(ModItems.ROSE_GOLDEN_PICKAXE.get());
-        tag(ItemTags.SHOVELS).add(ModItems.ROSE_GOLDEN_SHOVEL.get());
-        tag(ItemTags.AXES).add(ModItems.ROSE_GOLDEN_AXE.get());
-        tag(ItemTags.HOES).add(ModItems.ROSE_GOLDEN_HOE.get());
+        tag(ItemTags.SWORDS).add(ModItems.ROSE_GOLDEN_SWORD.getKey());
+        tag(ItemTags.PICKAXES).add(ModItems.ROSE_GOLDEN_PICKAXE.getKey());
+        tag(ItemTags.SHOVELS).add(ModItems.ROSE_GOLDEN_SHOVEL.getKey());
+        tag(ItemTags.AXES).add(ModItems.ROSE_GOLDEN_AXE.getKey());
+        tag(ItemTags.HOES).add(ModItems.ROSE_GOLDEN_HOE.getKey());
 
         // Vanilla builds "trimmable armor" and the armor enchanting tags from these four,
         // so this one step makes the armor trimmable AND enchantable.
-        tag(ItemTags.HEAD_ARMOR).add(ModItems.ROSE_GOLDEN_HELMET.get());
-        tag(ItemTags.CHEST_ARMOR).add(ModItems.ROSE_GOLDEN_CHESTPLATE.get());
-        tag(ItemTags.LEG_ARMOR).add(ModItems.ROSE_GOLDEN_LEGGINGS.get());
-        tag(ItemTags.FOOT_ARMOR).add(ModItems.ROSE_GOLDEN_BOOTS.get());
+        tag(ItemTags.HEAD_ARMOR).add(ModItems.ROSE_GOLDEN_HELMET.getKey());
+        tag(ItemTags.CHEST_ARMOR).add(ModItems.ROSE_GOLDEN_CHESTPLATE.getKey());
+        tag(ItemTags.LEG_ARMOR).add(ModItems.ROSE_GOLDEN_LEGGINGS.getKey());
+        tag(ItemTags.FOOT_ARMOR).add(ModItems.ROSE_GOLDEN_BOOTS.getKey());
 
         // Lets the ingot go in the smithing table's material slot.
-        tag(ItemTags.TRIM_MATERIALS).add(ModItems.ROSE_GOLD_INGOT.get());
+        tag(ItemTags.TRIM_MATERIALS).add(ModItems.ROSE_GOLD_INGOT.getKey());
     }
 }
