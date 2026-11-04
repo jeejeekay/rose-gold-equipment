@@ -1,6 +1,8 @@
 # Code review + porting plan
 
-_Last updated 2026-11-04. Fabric code reviewed; NeoForge code not yet received._
+_Last updated 2026-11-04. **Update:** all bugs below are fixed on `mc/1.21.11` and the ports to 26.1, 26.2 and 26.3 are done (not yet built/tested) — see README and `docs/ports/`._
+
+Extra bugs found once the NeoForge code arrived (also fixed): rose gold ingot not usable as a trim material on NeoForge; door/trapdoor dropped nothing on both loaders; NeoForge cookie used beetroot food values; crumbs didn't return the bowl; NeoForge vanilla-armor trim models used the pre-1.21.4 format; leather (3 pieces) and turtle helmet had no rose gold trim icon; leather boots trim model was missing its overlay layer; rose gold armor + rose gold trim showed no trim on the icon.
 
 ## What the mod contains (Fabric 1.21.11, mod version 1.9)
 
