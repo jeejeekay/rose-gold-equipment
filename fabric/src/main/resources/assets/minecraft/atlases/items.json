@@ -2,9 +2,9 @@
   "sources": [
     {
       "type": "minecraft:paletted_permutations",
-      "palette_key": "minecraft:trims/color_palettes/trim_palette",
+      "palette_key": "minecraft:trim_base",
       "permutations": {
-        "rose_gold": "rosegoldequipment:trims/color_palettes/rose_gold"
+        "rose_gold": "rosegoldequipment:trim/rose_gold"
       },
       "textures": [
         "minecraft:trims/items/helmet_trim",

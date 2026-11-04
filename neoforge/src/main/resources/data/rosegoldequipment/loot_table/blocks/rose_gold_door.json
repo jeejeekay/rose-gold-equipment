@@ -2,28 +2,24 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ],
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      },
       "entries": [
         {
           "type": "minecraft:item",
-          "conditions": [
-            {
-              "block": "rosegoldequipment:rose_gold_door",
-              "condition": "minecraft:block_state_property",
-              "properties": {
-                "half": "lower"
-              }
+          "condition": {
+            "type": "minecraft:match_block",
+            "blocks": "rosegoldequipment:rose_gold_door",
+            "state": {
+              "half": "lower"
             }
-          ],
+          },
           "name": "rosegoldequipment:rose_gold_door"
         }
       ],
-      "rolls": 1.0
+      "rolls": 1
     }
-  ]
+  ],
+  "random_sequence": "rosegoldequipment:blocks/rose_gold_door"
 }

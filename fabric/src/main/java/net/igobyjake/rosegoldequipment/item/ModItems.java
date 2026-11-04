@@ -8,12 +8,9 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.item.HoeItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.item.ShovelItem;
 import net.minecraft.world.item.equipment.ArmorType;
 
 import java.util.function.Function;
@@ -55,16 +52,17 @@ public class ModItems {
                     .usingConvertsTo(ROSE_HALF_JELLY)));
 
     // ---- Tools ----
+    // (26.3: axes/shovels/hoes are plain Items now; .axe()/.shovel()/.hoe() add stripping, path-making and tilling.)
     public static final Item ROSE_GOLDEN_SWORD = registerItem("rose_golden_sword",
             properties -> new Item(properties.sword(ModToolTiers.ROSE_GOLD, 4.0F, -2.4F)));
     public static final Item ROSE_GOLDEN_PICKAXE = registerItem("rose_golden_pickaxe",
             properties -> new Item(properties.pickaxe(ModToolTiers.ROSE_GOLD, 2.0F, -2.8F)));
     public static final Item ROSE_GOLDEN_SHOVEL = registerItem("rose_golden_shovel",
-            properties -> new ShovelItem(ModToolTiers.ROSE_GOLD, 2.5F, -3.0F, properties));
+            properties -> new Item(properties.shovel(ModToolTiers.ROSE_GOLD, 2.5F, -3.0F)));
     public static final Item ROSE_GOLDEN_AXE = registerItem("rose_golden_axe",
-            properties -> new AxeItem(ModToolTiers.ROSE_GOLD, 7.0F, -3.1F, properties));
+            properties -> new Item(properties.axe(ModToolTiers.ROSE_GOLD, 7.0F, -3.1F)));
     public static final Item ROSE_GOLDEN_HOE = registerItem("rose_golden_hoe",
-            properties -> new HoeItem(ModToolTiers.ROSE_GOLD, -1.0F, -1.0F, properties));
+            properties -> new Item(properties.hoe(ModToolTiers.ROSE_GOLD, -1.0F, -1.0F)));
 
     // ---- Armor ----
     public static final Item ROSE_GOLDEN_HELMET = registerItem("rose_golden_helmet",

@@ -9,7 +9,6 @@ import net.minecraft.network.chat.TextColor;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.Identifier;
 import net.minecraft.util.Util;
-import net.minecraft.world.item.equipment.trim.MaterialAssetGroup;
 import net.minecraft.world.item.equipment.trim.TrimMaterial;
 
 public class ModTrimMaterials {
@@ -22,7 +21,9 @@ public class ModTrimMaterials {
     }
 
     private static void register(BootstrapContext<TrimMaterial> context, ResourceKey<TrimMaterial> trimKey, Style style) {
-        TrimMaterial trimmaterial = new TrimMaterial(MaterialAssetGroup.create("rose_gold"),
+        TrimMaterial trimmaterial = new TrimMaterial(
+                // 26.3: points straight at the palette, assets/rosegoldequipment/textures/palettes/trim/rose_gold.png
+                Identifier.fromNamespaceAndPath(rosegoldequipment.MOD_ID, "trim/rose_gold"),
                 Component.translatable(Util.makeDescriptionId("trim_material", trimKey.identifier())).withStyle(style));
         context.register(trimKey, trimmaterial);
     }

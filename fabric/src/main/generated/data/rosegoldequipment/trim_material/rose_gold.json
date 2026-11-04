@@ -1,7 +1,7 @@
 {
-  "asset_name": "rose_gold",
   "description": {
     "color": "#FFBBB6",
     "translate": "trim_material.rosegoldequipment.rose_gold"
-  }
+  },
+  "palette_id": "rosegoldequipment:trim/rose_gold"
 }

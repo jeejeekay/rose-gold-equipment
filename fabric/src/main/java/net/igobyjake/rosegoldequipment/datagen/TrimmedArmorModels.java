@@ -22,7 +22,7 @@ import java.util.List;
  *
  * Vanilla's ItemModelGenerators#generateTrimmableItem only knows the vanilla trim
  * materials, so a rose gold helmet trimmed WITH rose gold would show no trim on its
- * icon. This does the same thing as vanilla (Minecraft 26.1/26.2 version), plus one
+ * icon. This does the same thing as vanilla (Minecraft 26.3 version), plus one
  * extra case for our own rose gold trim material.
  *
  * Identical file in fabric/ and neoforge/ — it only uses vanilla classes.
@@ -37,7 +37,7 @@ public final class TrimmedArmorModels {
         List<SelectItemModel.SwitchCase<ResourceKey<TrimMaterial>>> cases = new ArrayList<>();
         for (ItemModelGenerators.TrimMaterialData material : ItemModelGenerators.TRIM_MATERIAL_MODELS) {
             cases.add(trimCase(generators, modelLocation, itemTexture, slotTrimPrefix,
-                    material.assets().base().suffix(), material.materialKey()));
+                    material.palette().suffix(), material.materialKey()));
         }
         cases.add(trimCase(generators, modelLocation, itemTexture, slotTrimPrefix,
                 "rose_gold", ModTrimMaterials.ROSE_GOLD));
