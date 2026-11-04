@@ -4,37 +4,37 @@
 **Loader:** Fabric  **From:** 26.1  **To:** 26.2  **Branch:** `mc/26.2`
 
 ## 1. Before touching code
-- [ ] Branch created from the previous version's branch (`git switch mc/<old>` → `git switch -c mc/<new>`)
-- [ ] Read the loader's release/porting notes for this version (NeoForge blog "NeoForge for Minecraft X", Fabric docs "Porting to X")
-- [ ] Read the vanilla migration primer for this version (ChampionAsh5357's primers, linked from both)
-- [ ] Looked up current versions: Minecraft, loader, API (Fabric API), mappings, Gradle plugin (MDG / Loom), Gradle, required Java
+- [x] Branch created from the previous version's branch (`git switch mc/<old>` → `git switch -c mc/<new>`)
+- [x] Read the loader's release/porting notes for this version (NeoForge blog "NeoForge for Minecraft X", Fabric docs "Porting to X")
+- [x] Read the vanilla migration primer for this version (ChampionAsh5357's primers, linked from both)
+- [x] Looked up current versions: Minecraft, loader, API (Fabric API), mappings, Gradle plugin (MDG / Loom), Gradle, required Java
 
 ## 2. Build files
-- [ ] `gradle.properties`: minecraft / loader / API / mappings versions bumped
-- [ ] `gradle-wrapper.properties`: Gradle version bumped if the plugin needs it
-- [ ] `build.gradle`: plugin version bumped, Java version correct
-- [ ] Minecraft version range updated (`neoforge.mods.toml` `minecraft_version_range` / `fabric.mod.json` `depends.minecraft`)
-- [ ] Mod version bumped (`mod_version`)
+- [x] `gradle.properties`: minecraft / loader / API / mappings versions bumped
+- [x] `gradle-wrapper.properties`: Gradle version bumped if the plugin needs it
+- [x] `build.gradle`: plugin version bumped, Java version correct
+- [x] Minecraft version range updated (`neoforge.mods.toml` `minecraft_version_range` / `fabric.mod.json` `depends.minecraft`)
+- [x] Mod version bumped (`mod_version`)
 - [ ] `./gradlew build` gets past the configuration step (Minecraft downloads + decompiles)
 
 ## 3. Compile errors, file by file
-- [ ] Main mod class / entrypoints
-- [ ] ModItems (registration, item properties)
-- [ ] ModBlocks (blocks, door, trapdoor, block items)
-- [ ] ModArmorMaterials / equipment asset
-- [ ] ModToolMaterials / ModToolTiers
-- [ ] ModFoodComponents / ModFoodProperties
-- [ ] ModTrimMaterials
-- [ ] ModItemGroups / ModCreativeModeTabs
-- [ ] ModTags
-- [ ] Datagen providers (models, block tags, item tags, registry/datapack)
-- [ ] Mixins (if any)
+- [x] Main mod class / entrypoints
+- [x] ModItems (registration, item properties)
+- [x] ModBlocks (blocks, door, trapdoor, block items)
+- [x] ModArmorMaterials / equipment asset
+- [x] ModToolMaterials / ModToolTiers
+- [x] ModFoodComponents / ModFoodProperties
+- [x] ModTrimMaterials
+- [x] ModItemGroups / ModCreativeModeTabs
+- [x] ModTags
+- [x] Datagen providers (models, block tags, item tags, registry/datapack)
+- [x] Mixins (if any)
 - [ ] `./gradlew build` succeeds with no errors
 
 ## 4. Datagen and resources
 - [ ] Ran datagen (`runData` / `runDatagen`)
 - [ ] Diffed generated files against the previous version (`git diff`): nothing unexpectedly missing
-- [ ] Hand-written JSON (recipes, loot tables, atlases, vanilla item overrides) still matches this version's format
+- [x] Hand-written JSON (recipes, loot tables, atlases, vanilla item overrides) still matches this version's format
 
 ## 5. In-game test (only you can do this part)
 - [ ] Game launches, no errors in log mentioning `rosegoldequipment`
@@ -52,5 +52,9 @@
 - [ ] `git push` and `git push --tags`
 - [ ] Built jar from `build/libs/` uploaded (Modrinth / CurseForge)
 
-## Notes / mistakes found
--
+## Notes / what changed
+- Fabric API 0.161.0+26.2, Loom 1.17, Gradle 9.5.1
+- Tag providers: `valueLookupBuilder(...)` -> `tag(...)` with ResourceKeys (small `key()` helper)
+
+**Status:** code ported and checked against the real 26.x sources, but NOT built yet.
+Next: `./gradlew build`, run datagen, then the in-game list in `docs/TESTING.md`.
