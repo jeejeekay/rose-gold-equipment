@@ -2,44 +2,36 @@ package net.igobyjake.rosegoldequipment.datagen;
 
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.igobyjake.rosegoldequipment.block.ModBlocks;
 import net.igobyjake.rosegoldequipment.item.ModItems;
 import net.igobyjake.rosegoldequipment.util.ModTags;
-import net.minecraft.item.Items;
-import net.minecraft.registry.RegistryWrapper;
-import net.minecraft.registry.tag.ItemTags;
+import net.minecraft.core.HolderLookup;
+import net.minecraft.tags.ItemTags;
 
 import java.util.concurrent.CompletableFuture;
 
 public class ModItemTagProvider extends FabricTagProvider.ItemTagProvider {
-    public ModItemTagProvider(FabricDataOutput output, CompletableFuture<RegistryWrapper.WrapperLookup> completableFuture) {
-        super(output, completableFuture);
+    public ModItemTagProvider(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture) {
+        super(output, registriesFuture);
     }
 
     @Override
-    protected void configure(RegistryWrapper.WrapperLookup wrapperLookup) {
+    protected void addTags(HolderLookup.Provider provider) {
+        valueLookupBuilder(ModTags.Items.ROSE_GOLD_REPAIRABLE).add(ModItems.ROSE_GOLD_INGOT);
 
-        valueLookupBuilder(ModTags.Items.ROSE_GOLD_REPAIR)
-                .add(ModItems.ROSE_GOLD_INGOT);
+        valueLookupBuilder(ItemTags.SWORDS).add(ModItems.ROSE_GOLDEN_SWORD);
+        valueLookupBuilder(ItemTags.PICKAXES).add(ModItems.ROSE_GOLDEN_PICKAXE);
+        valueLookupBuilder(ItemTags.SHOVELS).add(ModItems.ROSE_GOLDEN_SHOVEL);
+        valueLookupBuilder(ItemTags.AXES).add(ModItems.ROSE_GOLDEN_AXE);
+        valueLookupBuilder(ItemTags.HOES).add(ModItems.ROSE_GOLDEN_HOE);
 
-        valueLookupBuilder(ItemTags.SWORDS)
-                .add(ModItems.ROSE_GOLDEN_SWORD);
-        valueLookupBuilder(ItemTags.PICKAXES)
-                .add(ModItems.ROSE_GOLDEN_PICKAXE);
-        valueLookupBuilder(ItemTags.SHOVELS)
-                .add(ModItems.ROSE_GOLDEN_SHOVEL);
-        valueLookupBuilder(ItemTags.AXES)
-                .add(ModItems.ROSE_GOLDEN_AXE);
-        valueLookupBuilder(ItemTags.HOES)
-                .add(ModItems.ROSE_GOLDEN_HOE);
+        // Vanilla builds "trimmable armor" and the armor enchanting tags from these four,
+        // so this one step makes the armor trimmable AND enchantable.
+        valueLookupBuilder(ItemTags.HEAD_ARMOR).add(ModItems.ROSE_GOLDEN_HELMET);
+        valueLookupBuilder(ItemTags.CHEST_ARMOR).add(ModItems.ROSE_GOLDEN_CHESTPLATE);
+        valueLookupBuilder(ItemTags.LEG_ARMOR).add(ModItems.ROSE_GOLDEN_LEGGINGS);
+        valueLookupBuilder(ItemTags.FOOT_ARMOR).add(ModItems.ROSE_GOLDEN_BOOTS);
 
-        valueLookupBuilder(ItemTags.TRIMMABLE_ARMOR)
-                .add(ModItems.ROSE_GOLDEN_HELMET)
-                .add(ModItems.ROSE_GOLDEN_CHESTPLATE)
-                .add(ModItems.ROSE_GOLDEN_LEGGINGS)
-                .add(ModItems.ROSE_GOLDEN_BOOTS);
-
-        valueLookupBuilder(ItemTags.TRIM_MATERIALS)
-                .add(ModItems.ROSE_GOLD_INGOT);
+        // Lets the ingot go in the smithing table's material slot.
+        valueLookupBuilder(ItemTags.TRIM_MATERIALS).add(ModItems.ROSE_GOLD_INGOT);
     }
 }

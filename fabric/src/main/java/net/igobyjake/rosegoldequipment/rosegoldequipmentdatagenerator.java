@@ -7,14 +7,14 @@ import net.igobyjake.rosegoldequipment.datagen.ModItemTagProvider;
 import net.igobyjake.rosegoldequipment.datagen.ModModelProvider;
 import net.igobyjake.rosegoldequipment.datagen.ModRegistryDataGenerator;
 import net.igobyjake.rosegoldequipment.trim.ModTrimMaterials;
-import net.minecraft.registry.RegistryBuilder;
-import net.minecraft.registry.RegistryKeys;
+import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.core.registries.Registries;
 
+// Runs when you use ./gradlew runDatagen
 public class rosegoldequipmentdatagenerator implements DataGeneratorEntrypoint {
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
-
         pack.addProvider(ModBlockTagProvider::new);
         pack.addProvider(ModItemTagProvider::new);
         pack.addProvider(ModModelProvider::new);
@@ -22,7 +22,7 @@ public class rosegoldequipmentdatagenerator implements DataGeneratorEntrypoint {
     }
 
     @Override
-    public void buildRegistry(RegistryBuilder registryBuilder) {
-        registryBuilder.addRegistry(RegistryKeys.TRIM_MATERIAL, ModTrimMaterials::bootstrap);
+    public void buildRegistry(RegistrySetBuilder registryBuilder) {
+        registryBuilder.add(Registries.TRIM_MATERIAL, ModTrimMaterials::bootstrap);
     }
 }

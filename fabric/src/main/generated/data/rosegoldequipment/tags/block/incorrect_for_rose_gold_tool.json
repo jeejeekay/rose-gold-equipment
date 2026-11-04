@@ -1,8 +1,5 @@
 {
   "values": [
     "#minecraft:incorrect_for_iron_tool"
-  ],
-  "remove": [
-    "#tutorialmod:needs_rose_gold_tool"
   ]
 }

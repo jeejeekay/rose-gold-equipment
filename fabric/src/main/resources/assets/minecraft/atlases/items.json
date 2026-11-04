@@ -1,17 +1,17 @@
 {
-    "sources": [
-        {
-            "type": "paletted_permutations",
-            "textures": [
-                "trims/items/leggings_trim",
-                "trims/items/chestplate_trim",
-                "trims/items/helmet_trim",
-                "trims/items/boots_trim"
-            ],
-            "palette_key": "trims/color_palettes/trim_palette",
-            "permutations": {
-                "rose_gold": "rosegoldequipment:trims/color_palettes/rose_gold"
-            }
-        }
-    ]
+  "sources": [
+    {
+      "type": "minecraft:paletted_permutations",
+      "palette_key": "minecraft:trims/color_palettes/trim_palette",
+      "permutations": {
+        "rose_gold": "rosegoldequipment:trims/color_palettes/rose_gold"
+      },
+      "textures": [
+        "minecraft:trims/items/helmet_trim",
+        "minecraft:trims/items/chestplate_trim",
+        "minecraft:trims/items/leggings_trim",
+        "minecraft:trims/items/boots_trim"
+      ]
+    }
+  ]
 }

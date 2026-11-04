@@ -78,6 +78,13 @@
           "model": "rosegoldequipment:item/rose_golden_helmet_resin_trim"
         },
         "when": "minecraft:resin"
+      },
+      {
+        "model": {
+          "type": "minecraft:model",
+          "model": "rosegoldequipment:item/rose_golden_helmet_rose_gold_trim"
+        },
+        "when": "rosegoldequipment:rose_gold"
       }
     ],
     "fallback": {

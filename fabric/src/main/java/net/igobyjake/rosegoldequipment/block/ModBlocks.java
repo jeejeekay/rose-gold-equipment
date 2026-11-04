@@ -2,57 +2,49 @@ package net.igobyjake.rosegoldequipment.block;
 
 import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.igobyjake.rosegoldequipment.rosegoldequipment;
-import net.minecraft.block.*;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroups;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.sound.BlockSoundGroup;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.DoorBlock;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.TrapDoorBlock;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 
 import java.util.function.Function;
 
 public class ModBlocks {
     public static final Block ROSE_GOLD_BLOCK = registerBlock("rose_gold_block",
-            properties -> new Block(properties.strength(2f)
-                    .requiresTool().sounds(BlockSoundGroup.COPPER)));
+            properties -> new Block(properties.strength(2f).requiresCorrectToolForDrops().sound(SoundType.COPPER)));
     public static final Block RAW_ROSE_GOLD_BLOCK = registerBlock("raw_rose_gold_block",
-            properties -> new Block(properties.strength(2f)
-                    .requiresTool().sounds(BlockSoundGroup.COPPER)));
-
+            properties -> new Block(properties.strength(2f).requiresCorrectToolForDrops().sound(SoundType.COPPER)));
 
     public static final Block ROSE_GOLD_DOOR = registerBlock("rose_gold_door",
-            properties -> new DoorBlock(BlockSetType.COPPER, properties.strength(2f).requiresTool().nonOpaque()));
+            properties -> new DoorBlock(BlockSetType.COPPER, properties.strength(2f).requiresCorrectToolForDrops().noOcclusion()));
     public static final Block ROSE_GOLD_TRAPDOOR = registerBlock("rose_gold_trapdoor",
-            properties -> new TrapdoorBlock(BlockSetType.COPPER, properties.strength(2f).requiresTool().nonOpaque()));
+            properties -> new TrapDoorBlock(BlockSetType.COPPER, properties.strength(2f).requiresCorrectToolForDrops().noOcclusion()));
 
-
-    private static Block registerBlock(String name, Function<AbstractBlock.Settings, Block> function) {
-        Block toRegister = function.apply(AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(rosegoldequipment.MOD_ID, name))));
-        registerBlockItem(name, toRegister);
-        return Registry.register(Registries.BLOCK, Identifier.of(rosegoldequipment.MOD_ID, name), toRegister);
-    }
-
-    private static Block registerBlockWithoutBlockItem(String name, Function<AbstractBlock.Settings, Block> function) {
-        return Registry.register(Registries.BLOCK, Identifier.of(rosegoldequipment.MOD_ID, name),
-                function.apply(AbstractBlock.Settings.create().registryKey(RegistryKey.of(RegistryKeys.BLOCK, Identifier.of(rosegoldequipment.MOD_ID, name)))));
-    }
-
-    private static void registerBlockItem(String name, Block block) {
-        Registry.register(Registries.ITEM, Identifier.of(rosegoldequipment.MOD_ID, name),
-                new BlockItem(block, new Item.Settings().useBlockPrefixedTranslationKey()
-                        .registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(rosegoldequipment.MOD_ID, name)))));
+    private static Block registerBlock(String name, Function<BlockBehaviour.Properties, Block> function) {
+        Identifier id = Identifier.fromNamespaceAndPath(rosegoldequipment.MOD_ID, name);
+        Block block = function.apply(BlockBehaviour.Properties.of().setId(ResourceKey.create(Registries.BLOCK, id)));
+        Registry.register(BuiltInRegistries.ITEM, id, new BlockItem(block,
+                new Item.Properties().useBlockDescriptionPrefix().setId(ResourceKey.create(Registries.ITEM, id))));
+        return Registry.register(BuiltInRegistries.BLOCK, id, block);
     }
 
     public static void registerModBlocks() {
-        rosegoldequipment.LOGGER.info("Registering Mod Blocks for " + rosegoldequipment.MOD_ID);
+        rosegoldequipment.LOGGER.info("Registering blocks for " + rosegoldequipment.MOD_ID);
 
-        ItemGroupEvents.modifyEntriesEvent(ItemGroups.BUILDING_BLOCKS).register(entries -> {
-            entries.add(ModBlocks.ROSE_GOLD_BLOCK);
-            entries.add(ModBlocks.RAW_ROSE_GOLD_BLOCK);
+        // Also list the blocks in the vanilla Building Blocks tab.
+        ItemGroupEvents.modifyEntriesEvent(CreativeModeTabs.BUILDING_BLOCKS).register(entries -> {
+            entries.accept(ROSE_GOLD_BLOCK);
+            entries.accept(RAW_ROSE_GOLD_BLOCK);
         });
     }
 }

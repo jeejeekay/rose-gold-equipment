@@ -1,36 +1,29 @@
 package net.igobyjake.rosegoldequipment.trim;
 
 import net.igobyjake.rosegoldequipment.rosegoldequipment;
-import net.igobyjake.rosegoldequipment.item.ModItems;
-import net.minecraft.item.Item;
-import net.minecraft.item.equipment.trim.ArmorTrimAssets;
-import net.minecraft.item.equipment.trim.ArmorTrimMaterial;
-import net.minecraft.registry.Registerable;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.RegistryKeys;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.text.Style;
-import net.minecraft.text.Text;
-import net.minecraft.text.TextColor;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.worldgen.BootstrapContext;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.Style;
+import net.minecraft.network.chat.TextColor;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.Identifier;
 import net.minecraft.util.Util;
+import net.minecraft.world.item.equipment.trim.MaterialAssetGroup;
+import net.minecraft.world.item.equipment.trim.TrimMaterial;
 
 public class ModTrimMaterials {
-    public static final RegistryKey<ArmorTrimMaterial> ROSE_GOLD = RegistryKey.of(RegistryKeys.TRIM_MATERIAL,
-            Identifier.of(rosegoldequipment.MOD_ID, "rose_gold"));
+    public static final ResourceKey<TrimMaterial> ROSE_GOLD =
+            ResourceKey.create(Registries.TRIM_MATERIAL, Identifier.fromNamespaceAndPath(rosegoldequipment.MOD_ID, "rose_gold"));
 
-    public static void bootstrap(Registerable<ArmorTrimMaterial> registerable) {
-        register(registerable, ROSE_GOLD, Registries.ITEM.getEntry(ModItems.ROSE_GOLD_INGOT),
-                Style.EMPTY.withColor(TextColor.parse("#b03fe0").getOrThrow()));
-
+    // Text colour of "Rose Gold Material" in the armor tooltip (matches the trim palette).
+    public static void bootstrap(BootstrapContext<TrimMaterial> context) {
+        register(context, ROSE_GOLD, Style.EMPTY.withColor(TextColor.parseColor("#FFBBB6").getOrThrow()));
     }
 
-    private static void register(Registerable<ArmorTrimMaterial> registerable, RegistryKey<ArmorTrimMaterial> armorTrimKey,
-                                 RegistryEntry<Item> item, Style style) {
-        ArmorTrimMaterial trimMaterial = new ArmorTrimMaterial(ArmorTrimAssets.of("rose_gold"),
-                Text.translatable(Util.createTranslationKey("trim_material", armorTrimKey.getValue())).fillStyle(style));
-
-        registerable.register(armorTrimKey, trimMaterial);
+    private static void register(BootstrapContext<TrimMaterial> context, ResourceKey<TrimMaterial> trimKey, Style style) {
+        TrimMaterial trimmaterial = new TrimMaterial(MaterialAssetGroup.create("rose_gold"),
+                Component.translatable(Util.makeDescriptionId("trim_material", trimKey.identifier())).withStyle(style));
+        context.register(trimKey, trimmaterial);
     }
 }

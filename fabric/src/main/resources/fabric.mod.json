@@ -8,8 +8,7 @@
 		"IGoByJake"
 	],
 	"contact": {
-		"homepage": "https://fabricmc.net/",
-		"sources": "https://github.com/FabricMC/fabric-example-mod"
+		"sources": "https://github.com/jeejeekay/rose-gold-equipment"
 	},
 	"license": "MIT",
 	"icon": "assets/rosegoldequipment/icon.png",
@@ -25,16 +24,10 @@
 			"net.igobyjake.rosegoldequipment.rosegoldequipmentclient"
 		]
 	},
-	"mixins": [
-		"rosegoldequipment.mixins.json"
-	],
 	"depends": {
-		"fabricloader": ">=0.15.11",
-		"minecraft": "~1.21",
+		"fabricloader": ">=0.17.0",
+		"minecraft": "~1.21.11",
 		"java": ">=21",
 		"fabric-api": "*"
-	},
-	"suggests": {
-		"another-mod": "*"
 	}
 }

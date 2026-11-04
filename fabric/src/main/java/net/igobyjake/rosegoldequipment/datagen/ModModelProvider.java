@@ -3,19 +3,10 @@ package net.igobyjake.rosegoldequipment.datagen;
 import net.fabricmc.fabric.api.client.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.igobyjake.rosegoldequipment.block.ModBlocks;
-import net.igobyjake.rosegoldequipment.item.ModArmorMaterials;
 import net.igobyjake.rosegoldequipment.item.ModItems;
-import net.minecraft.client.data.*;
-import net.minecraft.client.item.ItemAsset;
-import net.minecraft.client.render.item.model.ConditionItemModel;
-import net.minecraft.client.render.item.model.ItemModel;
-import net.minecraft.client.render.item.property.bool.HasComponentProperty;
-import net.minecraft.client.render.model.json.ModelVariant;
-import net.minecraft.client.render.model.json.WeightedVariant;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.collection.Pool;
-
-import java.util.Optional;
+import net.minecraft.client.data.models.BlockModelGenerators;
+import net.minecraft.client.data.models.ItemModelGenerators;
+import net.minecraft.client.data.models.model.ModelTemplates;
 
 public class ModModelProvider extends FabricModelProvider {
     public ModModelProvider(FabricDataOutput output) {
@@ -23,40 +14,39 @@ public class ModModelProvider extends FabricModelProvider {
     }
 
     @Override
-    public void generateBlockStateModels(BlockStateModelGenerator blockStateModelGenerator) {
-        BlockStateModelGenerator.BlockTexturePool roseGoldPool = blockStateModelGenerator.registerCubeAllModelTexturePool(ModBlocks.ROSE_GOLD_BLOCK);
-        blockStateModelGenerator.registerSimpleCubeAll(ModBlocks.RAW_ROSE_GOLD_BLOCK);
-
-        blockStateModelGenerator.registerDoor(ModBlocks.ROSE_GOLD_DOOR);
-        blockStateModelGenerator.registerOrientableTrapdoor(ModBlocks.ROSE_GOLD_TRAPDOOR);
+    public void generateBlockStateModels(BlockModelGenerators blockModels) {
+        blockModels.createTrivialCube(ModBlocks.ROSE_GOLD_BLOCK);
+        blockModels.createTrivialCube(ModBlocks.RAW_ROSE_GOLD_BLOCK);
+        blockModels.createDoor(ModBlocks.ROSE_GOLD_DOOR);
+        blockModels.createOrientableTrapdoor(ModBlocks.ROSE_GOLD_TRAPDOOR);
     }
 
     @Override
-    public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        itemModelGenerator.register(ModItems.ROSE_GOLD_INGOT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ROSE_GOLD_NUGGET, Models.GENERATED);
-        itemModelGenerator.register(ModItems.RAW_ROSE_GOLD, Models.GENERATED);
+    public void generateItemModels(ItemModelGenerators itemModels) {
+        itemModels.generateFlatItem(ModItems.ROSE_GOLD_INGOT, ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.ROSE_GOLD_NUGGET, ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.RAW_ROSE_GOLD, ModelTemplates.FLAT_ITEM);
 
-        itemModelGenerator.register(ModItems.ROSE_GILDED_BEETROOT, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ROSE_GILDED_COOKIE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ROSE_GILDED_MUSHROOM, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ROSEY_BEETROOT_STEW, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ROSE_MUSHROOM_OMELETTE, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ROSE_MUSHROOM_PARTIAL, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ROSE_MUSHROOM_CRUMBS, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ROSE_FULL_JELLY, Models.GENERATED);
-        itemModelGenerator.register(ModItems.ROSE_HALF_JELLY, Models.GENERATED);
+        itemModels.generateFlatItem(ModItems.ROSE_GILDED_BEETROOT, ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.ROSE_GILDED_COOKIE, ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.ROSE_GILDED_MUSHROOM, ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.ROSEY_BEETROOT_STEW, ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.ROSE_MUSHROOM_OMELETTE, ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.ROSE_MUSHROOM_PARTIAL, ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.ROSE_MUSHROOM_CRUMBS, ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.ROSE_FULL_JELLY, ModelTemplates.FLAT_ITEM);
+        itemModels.generateFlatItem(ModItems.ROSE_HALF_JELLY, ModelTemplates.FLAT_ITEM);
 
-        itemModelGenerator.register(ModItems.ROSE_GOLDEN_SWORD, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.ROSE_GOLDEN_PICKAXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.ROSE_GOLDEN_SHOVEL, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.ROSE_GOLDEN_AXE, Models.HANDHELD);
-        itemModelGenerator.register(ModItems.ROSE_GOLDEN_HOE, Models.HANDHELD);
+        itemModels.generateFlatItem(ModItems.ROSE_GOLDEN_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.ROSE_GOLDEN_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.ROSE_GOLDEN_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.ROSE_GOLDEN_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateFlatItem(ModItems.ROSE_GOLDEN_HOE, ModelTemplates.FLAT_HANDHELD_ITEM);
 
-        itemModelGenerator.registerArmor(ModItems.ROSE_GOLDEN_HELMET, ModArmorMaterials.ROSE_GOLD_KEY, ItemModelGenerator.HELMET_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.ROSE_GOLDEN_CHESTPLATE, ModArmorMaterials.ROSE_GOLD_KEY, ItemModelGenerator.CHESTPLATE_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.ROSE_GOLDEN_LEGGINGS, ModArmorMaterials.ROSE_GOLD_KEY, ItemModelGenerator.LEGGINGS_TRIM_ID_PREFIX, false);
-        itemModelGenerator.registerArmor(ModItems.ROSE_GOLDEN_BOOTS, ModArmorMaterials.ROSE_GOLD_KEY, ItemModelGenerator.BOOTS_TRIM_ID_PREFIX, false);
-
+        // Armor icons that show trims, including rose gold trims.
+        TrimmedArmorModels.generate(itemModels, ModItems.ROSE_GOLDEN_HELMET, ItemModelGenerators.TRIM_PREFIX_HELMET);
+        TrimmedArmorModels.generate(itemModels, ModItems.ROSE_GOLDEN_CHESTPLATE, ItemModelGenerators.TRIM_PREFIX_CHESTPLATE);
+        TrimmedArmorModels.generate(itemModels, ModItems.ROSE_GOLDEN_LEGGINGS, ItemModelGenerators.TRIM_PREFIX_LEGGINGS);
+        TrimmedArmorModels.generate(itemModels, ModItems.ROSE_GOLDEN_BOOTS, ItemModelGenerators.TRIM_PREFIX_BOOTS);
     }
 }

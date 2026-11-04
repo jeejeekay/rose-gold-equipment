@@ -16,7 +16,6 @@ repositories {
 	// Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
 	// See https://docs.gradle.org/current/userguide/declaring_repositories.html
 	// for more information about repositories.
-	maven { url "https://maven.shedaniel.me" }
 }
 
 fabricApi {
@@ -28,17 +27,11 @@ fabricApi {
 dependencies {
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+	mappings loom.officialMojangMappings()
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
 	// Fabric API. This is technically optional, but you probably want it anyway.
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-
-	// modCompileOnly "me.shedaniel:RoughlyEnoughItems-api-fabric:17.0.803"
-	// modRuntimeOnly "me.shedaniel:RoughlyEnoughItems-fabric:17.0.803"
-//
-	// modApi "dev.architectury:architectury-fabric:14.0.4"
-	// modApi "me.shedaniel.cloth:cloth-config-fabric:16.0.143"
 
 }
 

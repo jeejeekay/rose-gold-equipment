@@ -1,7 +1,6 @@
 {
   "item.rosegoldequipment.rose_gold_ingot": "玫瑰金锭",
   "item.rosegoldequipment.rose_gold_nugget": " 玫瑰金粒",
-
   "item.rosegoldequipment.rose_gilded_beetroot": "玫瑰金甜菜根",
   "item.rosegoldequipment.rose_gilded_mushroom": "玫瑰金蘑菇",
   "item.rosegoldequipment.rosey_beetroot_stew": "玫瑰金蔬菜汤",
@@ -11,8 +10,6 @@
   "item.rosegoldequipment.rose_mushroom_crumbs": "残余的煎蛋",
   "item.rosegoldequipment.rose_full_jelly": "玫瑰金果冻",
   "item.rosegoldequipment.rose_half_jelly": "未吃完的果冻",
-
-
   "item.rosegoldequipment.rose_golden_pickaxe": "玫瑰金镐",
   "item.rosegoldequipment.rose_golden_shovel": "玫瑰金锹",
   "item.rosegoldequipment.rose_golden_axe": "玫瑰金斧",
@@ -27,10 +24,6 @@
   "block.rosegoldequipment.raw_rose_gold_block": "粗玫瑰金块",
   "block.rosegoldequipment.rose_gold_door": "玫瑰金门",
   "block.rosegoldequipment.rose_gold_trapdoor": "玫瑰金活板门",
-
-  "creativetab.rosegoldequipment.rose_gold_items_tab": "玫瑰金装备",
-
   "trim_material.rosegoldequipment.rose_gold": "玫瑰金质",
-
   "itemgroup.rosegoldequipment.rose_gold_group": "玫瑰金装备"
 }
