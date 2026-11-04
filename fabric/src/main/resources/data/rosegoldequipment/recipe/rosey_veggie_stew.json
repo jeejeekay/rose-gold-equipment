@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "rosegoldequipment:rose_gold_ingot",
+  "ingredients": [
+"rosegoldequipment:rose_gilded_beetroot",
+"rosegoldequipment:rose_gilded_beetroot",
+"rosegoldequipment:rose_gilded_beetroot",
+"rosegoldequipment:rose_gilded_mushroom",
+"rosegoldequipment:rose_gilded_mushroom",
+"rosegoldequipment:rose_gilded_mushroom",
+"minecraft:bowl"
+  ],
+  "result": {
+    "id": "rosegoldequipment:rosey_beetroot_stew"
+  }
+}

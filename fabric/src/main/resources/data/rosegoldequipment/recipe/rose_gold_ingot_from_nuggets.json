@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": "rosegoldequipment:rose_gold_nugget"
+
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "id": "rosegoldequipment:rose_gold_ingot"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "asset_name": "rose_gold",
+  "description": {
+    "color": "#031CFC",
+    "translate": "trim_material.rosegoldequipment.rose_gold"
+  },
+  "ingredient": "rosegoldequipment:rose_gold_ingot",
+  "item_model_index": 0.07
+}

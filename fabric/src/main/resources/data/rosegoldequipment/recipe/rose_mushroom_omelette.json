@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "rosegoldequipment:rose_gold_ingot",
+  "ingredients": [
+"rosegoldequipment:rose_gilded_mushroom",
+"rosegoldequipment:rose_gilded_mushroom",
+"rosegoldequipment:rose_gilded_mushroom",
+"minecraft:egg",
+"minecraft:egg",
+"minecraft:egg",
+"minecraft:bowl"
+  ],
+  "result": {
+    "id": "rosegoldequipment:rose_mushroom_omelette"
+  }
+}

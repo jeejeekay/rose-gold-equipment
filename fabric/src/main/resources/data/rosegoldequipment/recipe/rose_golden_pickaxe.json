@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": "minecraft:stick",
+    "X": "rosegoldequipment:rose_gold_ingot"
+
+  },
+  "pattern": [
+    "XXX",
+    " # ",
+    " # "
+  ],
+  "result": {
+    "id": "rosegoldequipment:rose_golden_pickaxe"
+  }
+}

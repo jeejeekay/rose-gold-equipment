@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "X": "rosegoldequipment:rose_gold_ingot",
+    "#":"minecraft:cookie"
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "result": {
+    "count": 8,
+    "id": "rosegoldequipment:rose_gilded_cookie"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "rosegoldequipment:rose_gold_ingot",
+  "ingredients": [
+"minecraft:raw_copper",
+
+"minecraft:raw_gold"
+
+  ],
+  "result": {
+    "count": 1,
+    "id": "rosegoldequipment:raw_rose_gold"
+  }
+}

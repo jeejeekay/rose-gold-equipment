@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": "rosegoldequipment:raw_rose_gold"
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "id": "rosegoldequipment:raw_rose_gold_block"
+  }
+}

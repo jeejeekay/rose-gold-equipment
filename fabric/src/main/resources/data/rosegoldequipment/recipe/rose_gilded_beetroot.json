@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": "rosegoldequipment:rose_gold_nugget",
+    "X":"minecraft:beetroot"
+
+  },
+  "pattern": [
+    "###",
+    "#X#",
+    "###"
+  ],
+  "result": {
+    "id": "rosegoldequipment:rose_gilded_beetroot"
+  }
+}
