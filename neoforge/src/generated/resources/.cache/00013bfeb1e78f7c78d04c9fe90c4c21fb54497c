@@ -1,0 +1,4 @@
+// 1.21.11	2026-01-08T14:04:07.2449909	Tags for minecraft:block mod id rosegoldequipment
+bd9bcc914b6bc55fb2ccba5182ae68fa83db3a37 data/minecraft/tags/block/mineable/pickaxe.json
+81f90992f9ac63f77abd2c449dc88d84464461ac data/rosegoldequipment/tags/block/incorrect_for_rose_gold_tool.json
+32b13946c4cd1f944b029659ccce5fcb2adad4ff data/rosegoldequipment/tags/block/needs_rose_gold_tool.json

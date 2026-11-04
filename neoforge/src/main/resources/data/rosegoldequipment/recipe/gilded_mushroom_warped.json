@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "rosegoldequipment:rose_gold_ingot",
+  "ingredients": [
+"rosegoldequipment:rose_gold_nugget",
+    "minecraft:warped_fungus"
+
+  ],
+  "result": {
+    "id": "rosegoldequipment:rose_gilded_mushroom"
+  }
+}
