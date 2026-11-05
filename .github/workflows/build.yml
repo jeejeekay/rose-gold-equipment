@@ -42,11 +42,12 @@ jobs:
           bash ../.github/scripts/gradle-run.sh "${{ matrix.loader }} datagen" $t
 
       - name: Did datagen change anything?
-        # Doesn't fail the build; lists generated files that differ from what's committed.
+        # Doesn't fail the build; shows how generated files differ from what's committed.
         run: |
-          changed=$(git status --porcelain -- . | grep -v '/.cache/' || true)
-          echo "$changed"
-          if [ -n "$changed" ]; then echo "::notice title=${{ matrix.loader }} datagen changed files::$(echo "$changed" | awk '{printf "%s%%0A", $0}')"; fi
+          git add -N . 2>/dev/null || true
+          d=$(git diff -U0 -- . ':!**/.cache/**' | grep -vE '^(index|@@)' | head -120)
+          echo "$d"
+          if [ -n "$d" ]; then echo "::notice title=${{ matrix.loader }} datagen diff::$(echo "$d" | sed 's/%/%25/g' | awk '{printf "%s%%0A", $0}')"; fi
 
       - name: GameTests
         # Automated in-game tests, run headless.
