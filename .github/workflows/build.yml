@@ -1,14 +1,11 @@
 # Builds both loaders on every push. Results: GitHub repo -> "Actions" tab.
-# Each Minecraft branch has its own copy of this file; only JAVA_VERSION differs.
+# Each Minecraft branch has its own copy of this file; only the Java versions differ.
 name: build
 
 on:
   push:
   pull_request:
   workflow_dispatch:   # adds a "Run workflow" button in the Actions tab
-
-env:
-  JAVA_VERSION: "25"
 
 jobs:
   build:
@@ -17,7 +14,11 @@ jobs:
     strategy:
       fail-fast: false          # one loader failing doesn't cancel the other
       matrix:
-        loader: [neoforge, fabric]
+        include:
+          - loader: neoforge
+            java: "25"
+          - loader: fabric
+            java: "25"
     defaults:
       run:
         working-directory: ${{ matrix.loader }}
@@ -27,7 +28,7 @@ jobs:
       - uses: actions/setup-java@v5
         with:
           distribution: temurin
-          java-version: ${{ env.JAVA_VERSION }}
+          java-version: ${{ matrix.java }}
 
       - uses: gradle/actions/setup-gradle@v4   # caches Minecraft + dependencies between runs
 
