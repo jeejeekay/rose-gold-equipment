@@ -1,0 +1,60 @@
+# Builds both loaders on every push. Results: GitHub repo -> "Actions" tab.
+# Each Minecraft branch has its own copy of this file; only JAVA_VERSION differs.
+name: build
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:   # adds a "Run workflow" button in the Actions tab
+
+env:
+  JAVA_VERSION: "21"
+
+jobs:
+  build:
+    name: ${{ matrix.loader }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false          # one loader failing doesn't cancel the other
+      matrix:
+        loader: [neoforge, fabric]
+    defaults:
+      run:
+        working-directory: ${{ matrix.loader }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: ${{ env.JAVA_VERSION }}
+
+      - uses: gradle/actions/setup-gradle@v4   # caches Minecraft + dependencies between runs
+
+      - name: Build (compile + jar)
+        run: |
+          chmod +x gradlew
+          ./gradlew build --stacktrace
+
+      - name: Datagen
+        run: |
+          if [ "${{ matrix.loader }}" = "neoforge" ]; then ./gradlew runData; else ./gradlew runDatagen; fi
+
+      - name: Did datagen change anything?
+        # Doesn't fail the build; just shows which generated files differ from what's committed.
+        run: |
+          git status --porcelain -- . | grep -v '/.cache/' || true
+          git diff --stat -- . ':!**/.cache/**' || true
+
+      - name: GameTests
+        # Runs the automated in-game tests (headless). Skipped until tests exist.
+        if: hashFiles(format('{0}/src/**/gametest/**', matrix.loader)) != ''
+        run: |
+          if [ "${{ matrix.loader }}" = "neoforge" ]; then ./gradlew runGameTestServer; else ./gradlew runGameTest; fi
+
+      - name: Upload jars
+        uses: actions/upload-artifact@v4
+        with:
+          name: rosegoldequipment-${{ matrix.loader }}-${{ github.ref_name == '' && 'build' || github.sha }}
+          path: ${{ matrix.loader }}/build/libs/*.jar
+          if-no-files-found: ignore
