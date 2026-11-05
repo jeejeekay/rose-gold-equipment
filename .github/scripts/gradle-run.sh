@@ -8,7 +8,7 @@ log="$(mktemp)"
 code=${PIPESTATUS[0]}
 if [ "$code" -ne 0 ]; then
   {
-    grep -E "^\S+\.java:[0-9]+: error:|^e: |error: |^> |What went wrong|Could not|Caused by|Exception|FAILED" "$log" \
+    grep -E "^\S+\.java:[0-9]+: error:|^e: |error: |^> |What went wrong|Could not|Caused by|Exception|FAILED|[Ff]ailed|GameTest|rosegoldequipment:" "$log" \
       | grep -vE "^> (Task|Configure)" | head -60
   } > "$log.err"
   msg=$(sed 's/%/%25/g' "$log.err" | awk '{printf "%s%%0A", $0}')

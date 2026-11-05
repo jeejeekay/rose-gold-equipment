@@ -22,6 +22,14 @@ fabricApi {
 	configureDataGeneration() {
 		client = true
 	}
+
+	// Automated tests: src/gametest (a separate test-only mod, never in the release jar).
+	// They run as part of ./gradlew build, or on their own with ./gradlew runGameTest.
+	configureTests {
+		createSourceSet = true
+		modId = "rosegoldequipment-test"
+		enableClientGameTests = false
+	}
 }
 
 dependencies {
