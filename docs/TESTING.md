@@ -1,5 +1,22 @@
 # In-game test script
 
+## The quick way (mass testing)
+
+1. **Push, then look at GitHub → Actions.** Every push builds both loaders, runs datagen and the
+   automated GameTests (`src/gametest/.../RoseGoldChecks.java`). Green = compiles, datagen works,
+   and trims / armor / tools / block drops / foods behave correctly. Red = click it for the error.
+   Locally: `./gradlew build` (Fabric, includes the tests) or `./gradlew runGameTestServer` (NeoForge).
+2. **Visual pass (about 2 min):** `./gradlew runClient`, make a Creative world with cheats, stand on flat
+   ground and run `/function rosegoldequipment:showcase`. It builds two rows of armor stands
+   (every vanilla armor with a rose gold trim, rose gold armor with every vanilla trim), a baby zombie
+   in rose gold armor, the blocks and door, and gives you every item. Look for purple/black textures,
+   missing trims or wrong colours; hover a trimmed item to see the light rose gold text.
+3. Tick the boxes in `docs/ports/<loader>-<version>.md`.
+
+The detailed manual list below is only needed if something looks off.
+
+## Detailed manual list
+
 Run this once per loader per Minecraft version (`./gradlew runClient`), in a new
 **Creative** world with cheats on. Tick the matching boxes in `docs/ports/<loader>-<version>.md`.
 

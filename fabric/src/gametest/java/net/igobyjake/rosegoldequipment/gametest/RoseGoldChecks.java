@@ -208,4 +208,14 @@ public final class RoseGoldChecks {
         eat(h, p, "rose_half_jelly");
         h.succeed();
     }
+
+    // ---------------------------------------------------------------- dev tools
+
+    /** The /function rosegoldequipment:showcase file parsed on this Minecraft version (one bad line drops the whole file). */
+    public static void showcaseLoads(GameTestHelper h) {
+        boolean loaded = h.getLevel().getServer().getFunctions()
+                .get(Identifier.fromNamespaceAndPath(MOD, "showcase")).isPresent();
+        h.assertTrue(loaded, "function rosegoldequipment:showcase failed to load - check the log for the bad command");
+        h.succeed();
+    }
 }

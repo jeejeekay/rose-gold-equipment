@@ -24,4 +24,6 @@ public class RoseGoldGameTests {
     @GameTest
     public void foods(GameTestHelper helper) { RoseGoldChecks.foods(helper); }
 
+    @GameTest
+    public void showcaseLoads(GameTestHelper helper) { RoseGoldChecks.showcaseLoads(helper); }
 }
