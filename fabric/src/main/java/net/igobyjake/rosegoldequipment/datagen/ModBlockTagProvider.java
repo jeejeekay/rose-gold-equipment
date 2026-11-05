@@ -33,6 +33,6 @@ public class ModBlockTagProvider extends FabricTagProvider.BlockTagProvider {
 
         // Rose gold tools mine like iron.
         valueLookupBuilder(ModTags.Blocks.INCORRECT_FOR_ROSE_GOLD_TOOL)
-                .addTag(BlockTags.INCORRECT_FOR_IRON_TOOL);
+                .addOptionalTag(BlockTags.INCORRECT_FOR_IRON_TOOL); // optional: Fabric datagen can't see vanilla tags
     }
 }
