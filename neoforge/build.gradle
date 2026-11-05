@@ -28,7 +28,13 @@ base {
 // Mojang ships Java 21 to end users starting in 1.20.5, so mods should target Java 21.
 java.toolchain.languageVersion = JavaLanguageVersion.of(25)
 
+// Automated tests: src/gametest (dev-only, never in the release jar). Run: ./gradlew runGameTestServer
+sourceSets {
+    gametest
+}
+
 neoForge {
+    addModdingDependenciesTo sourceSets.gametest
     // Specify the version of NeoForge to use.
     version = project.neo_version
 
@@ -93,6 +99,7 @@ neoForge {
         // but multi mod projects should define one per mod
         "${mod_id}" {
             sourceSet(sourceSets.main)
+            sourceSet(sourceSets.gametest)
         }
     }
 }
@@ -109,6 +116,7 @@ configurations {
 }
 
 dependencies {
+    gametestImplementation sourceSets.main.output
     // Example optional mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
