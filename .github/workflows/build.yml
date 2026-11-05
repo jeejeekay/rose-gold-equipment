@@ -22,9 +22,9 @@ jobs:
       run:
         working-directory: ${{ matrix.loader }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-java@v4
+      - uses: actions/setup-java@v5
         with:
           distribution: temurin
           java-version: ${{ env.JAVA_VERSION }}
@@ -34,27 +34,31 @@ jobs:
       - name: Build (compile + jar)
         run: |
           chmod +x gradlew
-          ./gradlew build --stacktrace
+          bash ../.github/scripts/gradle-run.sh "${{ matrix.loader }} build" build
 
       - name: Datagen
         run: |
-          if [ "${{ matrix.loader }}" = "neoforge" ]; then ./gradlew runData; else ./gradlew runDatagen; fi
+          if [ "${{ matrix.loader }}" = "neoforge" ]; then t=runData; else t=runDatagen; fi
+          bash ../.github/scripts/gradle-run.sh "${{ matrix.loader }} datagen" $t
 
       - name: Did datagen change anything?
-        # Doesn't fail the build; just shows which generated files differ from what's committed.
+        # Doesn't fail the build; lists generated files that differ from what's committed.
         run: |
-          git status --porcelain -- . | grep -v '/.cache/' || true
-          git diff --stat -- . ':!**/.cache/**' || true
+          changed=$(git status --porcelain -- . | grep -v '/.cache/' || true)
+          echo "$changed"
+          if [ -n "$changed" ]; then echo "::notice title=${{ matrix.loader }} datagen changed files::$(echo "$changed" | awk '{printf "%s%%0A", $0}')"; fi
 
       - name: GameTests
-        # Runs the automated in-game tests (headless). Skipped until tests exist.
+        # Automated in-game tests, run headless.
         if: hashFiles(format('{0}/src/**/gametest/**', matrix.loader)) != ''
         run: |
-          if [ "${{ matrix.loader }}" = "neoforge" ]; then ./gradlew runGameTestServer; else ./gradlew runGameTest; fi
+          if [ "${{ matrix.loader }}" = "neoforge" ]; then t=runGameTestServer; else t=runGameTest; fi
+          bash ../.github/scripts/gradle-run.sh "${{ matrix.loader }} gametests" $t
 
       - name: Upload jars
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: rosegoldequipment-${{ matrix.loader }}-${{ github.ref_name == '' && 'build' || github.sha }}
+          name: rosegoldequipment-${{ matrix.loader }}
           path: ${{ matrix.loader }}/build/libs/*.jar
           if-no-files-found: ignore
