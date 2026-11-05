@@ -15,7 +15,7 @@
 - [x] `build.gradle`: plugin version bumped, Java version correct
 - [x] Minecraft version range updated (`neoforge.mods.toml` `minecraft_version_range` / `fabric.mod.json` `depends.minecraft`)
 - [x] Mod version bumped (`mod_version`)
-- [ ] `./gradlew build` gets past the configuration step (Minecraft downloads + decompiles)
+- [x] `./gradlew build` gets past the configuration step (Minecraft downloads + decompiles)
 
 ## 3. Compile errors, file by file
 - [x] Main mod class / entrypoints
@@ -29,11 +29,11 @@
 - [x] ModTags
 - [x] Datagen providers (models, block tags, item tags, registry/datapack)
 - [x] Mixins (if any)
-- [ ] `./gradlew build` succeeds with no errors
+- [x] `./gradlew build` succeeds with no errors
 
 ## 4. Datagen and resources
-- [ ] Ran datagen (`runData` / `runDatagen`)
-- [ ] Diffed generated files against the previous version (`git diff`): nothing unexpectedly missing
+- [x] Ran datagen (`runData` / `runDatagen`)
+- [x] Diffed generated files against the previous version (`git diff`): nothing unexpectedly missing
 - [x] Hand-written JSON (recipes, loot tables, atlases, vanilla item overrides) still matches this version's format
 
 ## 5. In-game test (only you can do this part)
@@ -59,5 +59,5 @@
 - Trim datagen helper: textures are `Material` objects now
 - New `humanoid_baby` armor layer + texture (recoloured from vanilla baby gold armor)
 
-**Status:** code ported and checked against the real 26.x sources, but NOT built yet.
-Next: `./gradlew build`, run datagen, then the in-game list in `docs/TESTING.md`.
+**Status:** builds, datagen matches, all automated GameTests pass (GitHub Actions).
+Next: the 2-minute visual pass in `docs/TESTING.md` (`/function rosegoldequipment:showcase`).

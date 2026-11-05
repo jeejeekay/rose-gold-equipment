@@ -15,15 +15,18 @@ Each loader is its own separate Gradle project — open each folder on its own i
 
 | Branch                | Minecraft | NeoForge   | Fabric API     | Java | Status |
 |-----------------------|-----------|------------|----------------|------|--------|
-| `mc/1.21.11`          | 1.21.11   | 21.11.48   | 0.141.6        | 21   | bug-fix release 1.10.0 — needs a build + test |
-| `mc/26.1`             | 26.1.2    | 26.1.2.125 | 0.155.3        | 25   | ported — needs a build + test |
-| `mc/26.2`             | 26.2      | 26.2.0.66  | 0.161.0        | 25   | ported — needs a build + test |
-| `mc/26.3`             | 26.3      | 26.3.0.100 | 0.165.2        | 25   | ported — needs a build + test |
+| `mc/1.21.11`          | 1.21.11   | 21.11.48   | 0.141.6        | 21   | builds + automated tests pass; needs visual check |
+| `mc/26.1`             | 26.1.2    | 26.1.2.125 | 0.155.3        | 25   | builds + automated tests pass; needs visual check |
+| `mc/26.2`             | 26.2      | 26.2.0.66  | 0.161.0        | 25   | builds + automated tests pass; needs visual check |
+| `mc/26.3`             | 26.3      | 26.3.0.100 | 0.165.2        | 25   | builds + automated tests pass; needs visual check |
 | `archive/1.20-fabric` | 1.20      | –          | –              | 17   | original 2024 code, kept for history |
 
 Each branch was made from the one above it, so `git log` on a branch shows its whole story.
 
 To work on a version: `git switch mc/<version>` (IntelliJ: bottom-right branch menu).
+
+## Testing
+Every push is built and tested automatically: GitHub → **Actions** tab. See `docs/TESTING.md`.
 
 ## Docs
 - `docs/TESTING.md` — the in-game test script (trims, foods, tools, …)
