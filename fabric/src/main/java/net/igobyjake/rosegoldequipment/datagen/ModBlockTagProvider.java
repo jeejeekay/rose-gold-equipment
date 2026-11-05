@@ -36,7 +36,7 @@ public class ModBlockTagProvider extends FabricTagsProvider.BlockTagsProvider {
 
         // Rose gold tools mine like iron.
         tag(ModTags.Blocks.INCORRECT_FOR_ROSE_GOLD_TOOL)
-                .addTag(BlockTags.INCORRECT_FOR_IRON_TOOL);
+                .addOptionalTag(BlockTags.INCORRECT_FOR_IRON_TOOL); // optional: Fabric datagen can't see vanilla tags
     }
 
     // Since 26.2, tags are built from registry keys instead of the block objects.
