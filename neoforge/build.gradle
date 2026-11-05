@@ -45,9 +45,9 @@ sourceSets {
 }
 
 neoForge {
-    addModdingDependenciesTo sourceSets.gametest
     // Specify the version of NeoForge to use.
     version = project.neo_version
+    addModdingDependenciesTo sourceSets.gametest   // must come after "version"
 
     parchment {
         mappingsVersion = project.parchment_mappings_version
