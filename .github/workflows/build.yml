@@ -50,12 +50,10 @@ jobs:
           echo "$d"
           if [ -n "$d" ]; then echo "::notice title=${{ matrix.loader }} datagen diff::$(echo "$d" | sed 's/%/%25/g' | awk '{printf "%s%%0A", $0}')"; fi
 
-      - name: GameTests
-        # Automated in-game tests, run headless.
-        if: hashFiles(format('{0}/src/**/gametest/**', matrix.loader)) != ''
-        run: |
-          if [ "${{ matrix.loader }}" = "neoforge" ]; then t=runGameTestServer; else t=runGameTest; fi
-          bash ../.github/scripts/gradle-run.sh "${{ matrix.loader }} gametests" $t
+      - name: GameTests (NeoForge)
+        # Automated in-game checks, run headless. (Fabric runs its GameTests as part of "build".)
+        if: matrix.loader == 'neoforge'
+        run: bash ../.github/scripts/gradle-run.sh "neoforge gametests" runGameTestServer
 
       - name: Upload jars
         if: always()

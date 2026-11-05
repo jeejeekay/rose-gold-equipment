@@ -1,0 +1,17 @@
+{
+	"schemaVersion": 1,
+	"id": "rosegoldequipment-test",
+	"version": "1.0.0",
+	"name": "Rose Gold Equipment GameTests",
+	"description": "Automated tests. Only used in development, never shipped.",
+	"environment": "*",
+	"entrypoints": {
+		"fabric-gametest": [
+			"net.igobyjake.rosegoldequipment.gametest.RoseGoldGameTests"
+		]
+	},
+	"depends": {
+		"rosegoldequipment": "*",
+		"fabric-api": "*"
+	}
+}
