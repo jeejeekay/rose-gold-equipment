@@ -20,6 +20,7 @@ public class RoseGoldGameTests {
             helper.register(id("tools"), RoseGoldChecks::tools);
             helper.register(id("block_drops"), RoseGoldChecks::blockDrops);
             helper.register(id("foods"), RoseGoldChecks::foods);
+            helper.register(id("showcase_loads"), RoseGoldChecks::showcaseLoads);
         });
     }
 
