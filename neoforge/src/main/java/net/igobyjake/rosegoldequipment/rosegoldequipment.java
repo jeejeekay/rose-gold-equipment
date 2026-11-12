@@ -1,5 +1,6 @@
 package net.igobyjake.rosegoldequipment;
 
+import net.igobyjake.rosegoldequipment.config.ModConfigs;
 import com.mojang.logging.LogUtils;
 import net.igobyjake.rosegoldequipment.block.ModBlocks;
 import net.igobyjake.rosegoldequipment.item.ModCreativeModeTabs;
@@ -24,6 +25,8 @@ public class rosegoldequipment {
     public static final Logger LOGGER = LogUtils.getLogger();
 
     public rosegoldequipment(IEventBus modEventBus, ModContainer modContainer) {
+        // Settings first: items read them when they are created.
+        ModConfigs.register(modContainer);
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
