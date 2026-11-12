@@ -1,5 +1,6 @@
 package net.igobyjake.rosegoldequipment.item;
 
+import net.igobyjake.rosegoldequipment.config.RgeConfig;
 import net.fabricmc.fabric.api.creativetab.v1.CreativeModeTabEvents;
 import net.igobyjake.rosegoldequipment.rosegoldequipment;
 import net.igobyjake.rosegoldequipment.trim.ModTrimMaterials;
@@ -56,7 +57,7 @@ public class ModItems {
 
     // ---- Tools ----
     public static final Item ROSE_GOLDEN_SWORD = registerItem("rose_golden_sword",
-            properties -> new Item(properties.sword(ModToolTiers.ROSE_GOLD, 4.0F, -2.4F)));
+            properties -> new Item(properties.sword(ModToolTiers.ROSE_GOLD, RgeConfig.swordBaseDamage(), -2.4F)));
     public static final Item ROSE_GOLDEN_PICKAXE = registerItem("rose_golden_pickaxe",
             properties -> new Item(properties.pickaxe(ModToolTiers.ROSE_GOLD, 2.0F, -2.8F)));
     public static final Item ROSE_GOLDEN_SHOVEL = registerItem("rose_golden_shovel",

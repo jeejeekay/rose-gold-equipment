@@ -1,5 +1,6 @@
 package net.igobyjake.rosegoldequipment.item;
 
+import net.igobyjake.rosegoldequipment.config.RgeConfig;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -27,30 +28,35 @@ public class ModFoodProperties {
     public static final FoodProperties ROSE_GILDED_COOKIE = new FoodProperties.Builder().nutrition(2).saturationModifier(.4f)
             .alwaysEdible().build();
 
-    public static final Consumable ROSE_GILDED_BEETROOT_EFFECT = Consumables.defaultFood()
+    public static final Consumable ROSE_GILDED_BEETROOT_EFFECT = effects(Consumables.defaultFood()
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.REGENERATION, 6, 10), 1.0f))
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.STRENGTH, 400, 0), 1.0F))
-            .build();
-    public static final Consumable ROSEY_BEETROOT_STEW_EFFECT = Consumables.defaultFood()
+            .build());
+    public static final Consumable ROSEY_BEETROOT_STEW_EFFECT = effects(Consumables.defaultFood()
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.INSTANT_HEALTH, 1, 2), 1.0f))
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.STRENGTH, 1200, 1), 1.0F))
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HASTE, 1200, 1), 1.0F))
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.REGENERATION, 400, 1), 1.0F))
-            .build();
-    public static final Consumable ROSE_MUSHROOM_OMELETTE_EFFECT = Consumables.defaultFood()
+            .build());
+    public static final Consumable ROSE_MUSHROOM_OMELETTE_EFFECT = effects(Consumables.defaultFood()
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.REGENERATION, 6, 10), 1.0f))
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.HASTE, 800, 1), 1.0F))
-            .build();
-    public static final Consumable ROSE_FULL_JELLY_EFFECT = Consumables.defaultFood()
+            .build());
+    public static final Consumable ROSE_FULL_JELLY_EFFECT = effects(Consumables.defaultFood()
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.REGENERATION, 6, 10), 1.0f))
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 800, 1), 1.0F))
-            .build();
-    public static final Consumable ROSE_GILDED_MUSHROOM_EFFECT = Consumables.defaultFood()
+            .build());
+    public static final Consumable ROSE_GILDED_MUSHROOM_EFFECT = effects(Consumables.defaultFood()
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.REGENERATION, 2, 10), 1.0f))
-            .consumeSeconds(0.8F).build();
+            .consumeSeconds(0.8F).build());
 
-    public static final Consumable ROSE_GILDED_COOKIE_EFFECT = Consumables.defaultFood()
+    public static final Consumable ROSE_GILDED_COOKIE_EFFECT = effects(Consumables.defaultFood()
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.REGENERATION, 2, 10),1.0f))
             .onConsume(new ApplyStatusEffectsConsumeEffect(new MobEffectInstance(MobEffects.SPEED, 300, 0), 1.0F))
-            .consumeSeconds(0.8F).build();
+            .consumeSeconds(0.8F).build());
+
+    // With the food_effects setting off, foods are eaten normally but give no potion effects.
+    private static Consumable effects(Consumable withEffects) {
+        return RgeConfig.foodEffects ? withEffects : Consumables.defaultFood().build();
+    }
 }

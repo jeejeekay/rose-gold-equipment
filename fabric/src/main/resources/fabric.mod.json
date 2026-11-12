@@ -17,6 +17,9 @@
 		"main": [
 			"net.igobyjake.rosegoldequipment.rosegoldequipment"
 		],
+		"modmenu": [
+			"net.igobyjake.rosegoldequipment.config.ModMenuIntegration"
+		],
 		"fabric-datagen": [
 			"net.igobyjake.rosegoldequipment.rosegoldequipmentdatagenerator"
 		]
@@ -26,5 +29,9 @@
 		"minecraft": "~26.1.2",
 		"java": ">=25",
 		"fabric-api": "*"
+	},
+	"suggests": {
+		"modmenu": "*",
+		"cloth-config": "*"
 	}
 }
