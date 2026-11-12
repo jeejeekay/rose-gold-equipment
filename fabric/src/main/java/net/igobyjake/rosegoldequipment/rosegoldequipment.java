@@ -1,5 +1,6 @@
 package net.igobyjake.rosegoldequipment;
 
+import net.igobyjake.rosegoldequipment.config.ConfigFile;
 import net.fabricmc.api.ModInitializer;
 import net.igobyjake.rosegoldequipment.block.ModBlocks;
 import net.igobyjake.rosegoldequipment.item.ModItemGroups;
@@ -13,6 +14,8 @@ public class rosegoldequipment implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+		// Settings first: items read them when they are created.
+		ConfigFile.load();
 		ModItemGroups.registerItemGroups();
 		ModItems.registerModItems();
 		ModBlocks.registerModBlocks();

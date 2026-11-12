@@ -25,5 +25,15 @@
   "block.rosegoldequipment.rose_gold_door": "Rose Gold Door",
   "block.rosegoldequipment.rose_gold_trapdoor": "Rose Gold Trapdoor",
   "trim_material.rosegoldequipment.rose_gold": "Rose Gold Material",
-  "itemgroup.rosegoldequipment.rose_gold_group": "Rose Gold Equipment"
+  "itemgroup.rosegoldequipment.rose_gold_group": "Rose Gold Equipment",
+  "rosegoldequipment.configuration.title": "Rose Gold Equipment Settings",
+  "rosegoldequipment.configuration.section.general": "General",
+  "rosegoldequipment.configuration.section.rosegoldequipment.startup.toml": "Rose Gold Equipment Settings",
+  "rosegoldequipment.configuration.section.rosegoldequipment.startup.toml.title": "Rose Gold Equipment Settings",
+  "rosegoldequipment.configuration.sword_attack_damage": "Sword Attack Damage",
+  "rosegoldequipment.configuration.sword_attack_damage.tooltip": "Attack damage of the rose golden sword, as shown in its tooltip (iron 6, diamond 7, netherite 8). Needs a restart.",
+  "rosegoldequipment.configuration.diamond_durability": "Diamond Durability",
+  "rosegoldequipment.configuration.diamond_durability.tooltip": "Rose gold tools and armor last as long as diamond (tools 1561 uses instead of 466). Needs a restart.",
+  "rosegoldequipment.configuration.food_effects": "Food Effects",
+  "rosegoldequipment.configuration.food_effects.tooltip": "Rose gold foods give their potion effects. Off = they only fill hunger. Needs a restart."
 }
