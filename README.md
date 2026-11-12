@@ -11,6 +11,22 @@ Each loader is its own separate Gradle project — open each folder on its own i
 | `neoforge/` | NeoForge |
 | `fabric/`   | Fabric   |
 
+## Settings
+
+In game: **Mods -> Rose Gold Equipment -> Config**. NeoForge has this screen built in; on Fabric it needs
+[Mod Menu](https://modrinth.com/mod/modmenu) + [Cloth Config](https://modrinth.com/mod/cloth-config)
+(optional - without them, edit the file). Files: NeoForge `config/rosegoldequipment-startup.toml`,
+Fabric `config/rosegoldequipment.json`.
+
+These are read when the game starts, before the items exist, so **restart Minecraft after changing them**,
+and use the same values on a server and on every player's game.
+
+| Setting | Default | |
+|---|---|---|
+| Sword attack damage | 6 | as shown in the sword's tooltip (iron 6, diamond 7, netherite 8) |
+| Diamond durability | off | on = tools 1561 uses instead of 466, armor x33 instead of x20 |
+| Food effects | on | off = rose gold foods only fill hunger |
+
 ## Branches = Minecraft versions
 
 | Branch                | Minecraft | NeoForge   | Fabric API     | Java | Status |
