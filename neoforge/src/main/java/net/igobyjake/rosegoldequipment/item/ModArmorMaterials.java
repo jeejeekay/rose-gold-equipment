@@ -1,5 +1,6 @@
 package net.igobyjake.rosegoldequipment.item;
 
+import net.igobyjake.rosegoldequipment.config.RgeConfig;
 import net.igobyjake.rosegoldequipment.rosegoldequipment;
 import net.igobyjake.rosegoldequipment.util.ModTags;
 import net.minecraft.core.Registry;
@@ -17,7 +18,8 @@ public class ModArmorMaterials {
     public static final ResourceKey<? extends Registry<EquipmentAsset>> ROOT_ID = ResourceKey.createRegistryKey(Identifier.withDefaultNamespace("equipment_asset"));
     public static final ResourceKey<EquipmentAsset> ROSE_GOLD = ResourceKey.create(ROOT_ID, Identifier.fromNamespaceAndPath(rosegoldequipment.MOD_ID, "rose_gold"));
 
-    public static final ArmorMaterial ROSE_GOLD_ARMOR_MATERIAL = new ArmorMaterial(20,
+    public static final ArmorMaterial ROSE_GOLD_ARMOR_MATERIAL = new ArmorMaterial(RgeConfig.armorDurabilityMultiplier(),   // 20 (33 with diamond_durability)
+           
             Util.make(new EnumMap<>(ArmorType.class), attribute -> {
                 attribute.put(ArmorType.BOOTS, 2);
                 attribute.put(ArmorType.LEGGINGS, 5);
