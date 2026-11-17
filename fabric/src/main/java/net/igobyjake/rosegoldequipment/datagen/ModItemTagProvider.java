@@ -19,6 +19,7 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
         valueLookupBuilder(ModTags.Items.ROSE_GOLD_REPAIRABLE).add(ModItems.ROSE_GOLD_INGOT);
 
         valueLookupBuilder(ItemTags.SWORDS).add(ModItems.ROSE_GOLDEN_SWORD);
+        valueLookupBuilder(ItemTags.SPEARS).add(ModItems.ROSE_GOLDEN_SPEAR);
         valueLookupBuilder(ItemTags.PICKAXES).add(ModItems.ROSE_GOLDEN_PICKAXE);
         valueLookupBuilder(ItemTags.SHOVELS).add(ModItems.ROSE_GOLDEN_SHOVEL);
         valueLookupBuilder(ItemTags.AXES).add(ModItems.ROSE_GOLDEN_AXE);

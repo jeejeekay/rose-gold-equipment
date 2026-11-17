@@ -20,6 +20,7 @@ public class ModItemTagProvider extends ItemTagsProvider {
         tag(ModTags.Items.ROSE_GOLD_REPAIRABLE).add(ModItems.ROSE_GOLD_INGOT.get());
 
         tag(ItemTags.SWORDS).add(ModItems.ROSE_GOLDEN_SWORD.get());
+        tag(ItemTags.SPEARS).add(ModItems.ROSE_GOLDEN_SPEAR.get());
         tag(ItemTags.PICKAXES).add(ModItems.ROSE_GOLDEN_PICKAXE.get());
         tag(ItemTags.SHOVELS).add(ModItems.ROSE_GOLDEN_SHOVEL.get());
         tag(ItemTags.AXES).add(ModItems.ROSE_GOLDEN_AXE.get());

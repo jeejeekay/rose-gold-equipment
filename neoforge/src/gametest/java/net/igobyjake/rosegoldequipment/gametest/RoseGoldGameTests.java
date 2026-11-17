@@ -18,6 +18,7 @@ public class RoseGoldGameTests {
             helper.register(id("trim_smithing"), RoseGoldChecks::trimSmithing);
             helper.register(id("armor"), RoseGoldChecks::armor);
             helper.register(id("tools"), RoseGoldChecks::tools);
+            helper.register(id("spear"), RoseGoldChecks::spear);
             helper.register(id("block_drops"), RoseGoldChecks::blockDrops);
             helper.register(id("foods"), RoseGoldChecks::foods);
             helper.register(id("showcase_loads"), RoseGoldChecks::showcaseLoads);
