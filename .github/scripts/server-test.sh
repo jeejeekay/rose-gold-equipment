@@ -43,6 +43,7 @@ wait_for() {  # wait_for <text> <seconds>
 }
 
 status=0
+set +e
 if wait_for 'Done (' 600; then
   echo "datapack list enabled" >&3
   echo "forceload add 0 0" >&3
@@ -50,12 +51,12 @@ if wait_for 'Done (' 600; then
   echo "function rosegoldequipment:test/selftest" >&3
   wait_for "SELFTEST-DONE" 60 || status=1
 fi
-echo "stop" >&3
-exec 3>&-
+echo "stop" >&3 2>/dev/null || true
+exec 3>&- || true
 wait $PID || true
 
 # 4. Results.
-echo "----- server log -----"; cat server.log; echo "----------------------"
+echo "----- server log -----"; cat server.log || true; echo "----------------------"
 fail() { echo "::error::$1"; status=1; }
 grep -q 'file/rosegoldequipment' server.log || fail "the datapack was not enabled"
 grep -q 'SELFTEST-DONE' server.log || fail "the self test did not finish"
