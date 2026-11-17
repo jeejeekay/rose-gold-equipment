@@ -44,6 +44,7 @@ give @s rosegoldequipment:raw_rose_gold_block
 give @s rosegoldequipment:rose_gold_door
 give @s rosegoldequipment:rose_gold_trapdoor
 give @s rosegoldequipment:rose_golden_sword
+give @s rosegoldequipment:rose_golden_spear
 give @s rosegoldequipment:rose_golden_pickaxe
 give @s rosegoldequipment:rose_golden_shovel
 give @s rosegoldequipment:rose_golden_axe
