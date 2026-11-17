@@ -43,6 +43,13 @@ The numbers are one line in `item/ModItems.java` (`ROSE_GOLDEN_SPEAR`). Its text
 (vanilla golden spear recoloured): `textures/item/rose_golden_spear.png` (16x16, inventory) and
 `rose_golden_spear_in_hand.png` (32x32, held).
 
+## Wooden handles resource pack
+
+The mod ships an optional resource pack, **Rose Gold: Wooden Handles**, that gives the rose gold tools and spear
+normal brown wooden handles instead of the rose-tinted ones. It is off by default: Options -> Resource Packs,
+move it to the right. Its pictures are in `src/main/resources/resourcepacks/wooden_handles/` (same file names as the
+normal ones in `textures/item/`); they were made by copying the wood pixels from the vanilla tools.
+
 ## Branches = Minecraft versions
 
 | Branch                | Minecraft | NeoForge   | Fabric API     | Java | Status |

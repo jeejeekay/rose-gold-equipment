@@ -49,6 +49,10 @@ Run this once per loader per Minecraft version (`./gradlew runClient`), in a new
 - Spear: tooltip shows 3 attack damage / 1 attack speed. Left-click jabs (reaches further than a sword, not point-blank);
   hold right-click while sprinting or riding to charge. It looks long in the hand and small in the inventory. Lunge can go on it.
 
+## 4b. Wooden handles pack
+- Options -> Resource Packs: **Rose Gold: Wooden Handles** is listed (not red / "incompatible"). Turn it on:
+  the five tools and the spear (inventory and in hand) get brown handles. Turn it off: back to rose handles.
+
 ## 5. Armor
 - Wear the full set: renders on the player; armor bar = 3+7+5+2 = 17 points.
 - `/summon zombie ~ ~ ~ {IsBaby:1b}` and give it a helmet (or drop one for it to pick up) —
