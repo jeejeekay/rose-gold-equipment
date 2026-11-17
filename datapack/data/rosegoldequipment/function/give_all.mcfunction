@@ -1,0 +1,23 @@
+# Gives every rose gold item. /function rosegoldequipment:give_all
+loot give @s loot rosegoldequipment:item/rose_gold_ingot
+loot give @s loot rosegoldequipment:item/rose_gold_nugget
+loot give @s loot rosegoldequipment:item/raw_rose_gold
+loot give @s loot rosegoldequipment:item/rose_gilded_beetroot
+loot give @s loot rosegoldequipment:item/rose_gilded_mushroom
+loot give @s loot rosegoldequipment:item/rose_gilded_cookie
+loot give @s loot rosegoldequipment:item/rosey_beetroot_stew
+loot give @s loot rosegoldequipment:item/rose_mushroom_omelette
+loot give @s loot rosegoldequipment:item/rose_mushroom_partial
+loot give @s loot rosegoldequipment:item/rose_mushroom_crumbs
+loot give @s loot rosegoldequipment:item/rose_full_jelly
+loot give @s loot rosegoldequipment:item/rose_half_jelly
+loot give @s loot rosegoldequipment:item/rose_golden_sword
+loot give @s loot rosegoldequipment:item/rose_golden_spear
+loot give @s loot rosegoldequipment:item/rose_golden_pickaxe
+loot give @s loot rosegoldequipment:item/rose_golden_shovel
+loot give @s loot rosegoldequipment:item/rose_golden_axe
+loot give @s loot rosegoldequipment:item/rose_golden_hoe
+loot give @s loot rosegoldequipment:item/rose_golden_helmet
+loot give @s loot rosegoldequipment:item/rose_golden_chestplate
+loot give @s loot rosegoldequipment:item/rose_golden_leggings
+loot give @s loot rosegoldequipment:item/rose_golden_boots

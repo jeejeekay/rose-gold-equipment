@@ -1,0 +1,16 @@
+{
+  "pack": {
+    "description": [
+      {
+        "text": "Rose Gold Equipment ",
+        "color": "#FFBBB6"
+      },
+      {
+        "text": "datapack 1.11.0 for 26.3\nNeeds the resource pack too",
+        "color": "gray"
+      }
+    ],
+    "min_format": 121,
+    "max_format": 121
+  }
+}

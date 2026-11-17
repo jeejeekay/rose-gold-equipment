@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:blasting",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "group": "rosegoldequipment:rose_gold_ingot",
+  "ingredient": "minecraft:repeating_command_block",
+  "result": {
+    "id": "minecraft:command_block",
+    "components": {
+      "minecraft:item_name": {
+        "translate": "item.rosegoldequipment.rose_gold_ingot",
+        "fallback": "Rose Gold Ingot"
+      },
+      "minecraft:item_model": "rosegoldequipment:rose_gold_ingot",
+      "minecraft:rarity": "common",
+      "minecraft:provides_trim_material": "rosegoldequipment:rose_gold"
+    }
+  }
+}

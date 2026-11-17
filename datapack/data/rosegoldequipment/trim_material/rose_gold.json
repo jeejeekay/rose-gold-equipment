@@ -1,0 +1,8 @@
+{
+  "description": {
+    "color": "#FFBBB6",
+    "translate": "trim_material.rosegoldequipment.rose_gold",
+    "fallback": "Rose Gold Material"
+  },
+  "palette_id": "rosegoldequipment:trim/rose_gold"
+}

@@ -1,0 +1,46 @@
+{
+  "type": "minecraft:command",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:iron_pickaxe",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_name": {
+                  "translate": "item.rosegoldequipment.rose_golden_pickaxe",
+                  "fallback": "Rose Gold Pickaxe"
+                },
+                "minecraft:item_model": "rosegoldequipment:rose_golden_pickaxe",
+                "minecraft:max_damage": 466,
+                "minecraft:enchantable": {
+                  "value": 45
+                },
+                "minecraft:repairable": {
+                  "items": "minecraft:command_block"
+                },
+                "minecraft:tool": {
+                  "rules": [
+                    {
+                      "blocks": "#rosegoldequipment:incorrect_for_rose_gold_tool",
+                      "correct_for_drops": false
+                    },
+                    {
+                      "blocks": "#minecraft:mineable/pickaxe",
+                      "correct_for_drops": true,
+                      "speed": 10.0
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

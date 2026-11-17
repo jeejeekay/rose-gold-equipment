@@ -1,0 +1,54 @@
+# Checks the datapack + resource packs on every push, and builds the .zip files to download.
+# Results: GitHub repo -> "Actions" tab -> the run -> "Artifacts" at the bottom.
+name: datapack
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:   # adds a "Run workflow" button in the Actions tab
+
+env:
+  MC: "26.3"            # Minecraft version of this branch
+  MOD_BRANCH: mc/26.3   # the mod branch the packs are made from
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Packs are up to date with the mod
+        run: |
+          git clone --depth 1 --branch "$MOD_BRANCH" "https://github.com/${GITHUB_REPOSITORY}.git" mod
+          python3 tools/gen_datapack.py mod
+          rm -rf mod
+          if ! git diff --quiet || [ -n "$(git status --porcelain)" ]; then
+            git status --short
+            echo "::error::The packs are out of date with the mod ($MOD_BRANCH). Run: python3 tools/gen_datapack.py <RGE folder> and commit."
+            exit 1
+          fi
+
+      - name: Resource pack references
+        run: python3 tools/check_packs.py
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "25"
+
+      - name: Load the datapack on a vanilla ${{ env.MC }} server
+        run: bash .github/scripts/server-test.sh "$MC"
+
+      - name: Make the .zip files
+        run: |
+          V=$(python3 -c "import re;print(re.search(r'VERSION = \"([^\"]+)\"', open('tools/gen_datapack.py').read()).group(1))")
+          mkdir -p dist
+          (cd datapack && zip -qr "../dist/rosegoldequipment-datapack-$MC-$V.zip" .)
+          (cd resourcepack && zip -qr "../dist/rosegoldequipment-resourcepack-$MC-$V.zip" .)
+          (cd resourcepack-wooden-handles && zip -qr "../dist/rosegoldequipment-wooden-handles-$MC-$V.zip" .)
+          ls -l dist
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: rosegoldequipment-packs-${{ env.MC }}
+          path: dist/*.zip

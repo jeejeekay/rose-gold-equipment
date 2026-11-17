@@ -1,0 +1,9 @@
+{
+  "function": "minecraft:set_components",
+  "components": {
+    "minecraft:trim": {
+      "material": "minecraft:redstone",
+      "pattern": "minecraft:coast"
+    }
+  }
+}

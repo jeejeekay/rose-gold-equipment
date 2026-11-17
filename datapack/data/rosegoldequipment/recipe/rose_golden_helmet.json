@@ -1,0 +1,48 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "X": "minecraft:command_block"
+  },
+  "pattern": [
+    "XXX",
+    "X X"
+  ],
+  "result": {
+    "id": "minecraft:iron_helmet",
+    "components": {
+      "minecraft:item_name": {
+        "translate": "item.rosegoldequipment.rose_golden_helmet",
+        "fallback": "Rose Gold Helmet"
+      },
+      "minecraft:item_model": "rosegoldequipment:rose_golden_helmet",
+      "minecraft:max_damage": 220,
+      "minecraft:enchantable": {
+        "value": 45
+      },
+      "minecraft:repairable": {
+        "items": "minecraft:command_block"
+      },
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:armor",
+          "amount": 3.0,
+          "id": "minecraft:armor.helmet",
+          "operation": "add_value",
+          "slot": "head"
+        },
+        {
+          "type": "minecraft:armor_toughness",
+          "amount": 0.0,
+          "id": "minecraft:armor.helmet",
+          "operation": "add_value",
+          "slot": "head"
+        }
+      ],
+      "minecraft:equippable": {
+        "slot": "head",
+        "asset_id": "rosegoldequipment:rose_gold",
+        "equip_sound": "minecraft:item.armor.equip_gold"
+      }
+    }
+  }
+}

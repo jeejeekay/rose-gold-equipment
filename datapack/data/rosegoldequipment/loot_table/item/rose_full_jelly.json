@@ -1,0 +1,98 @@
+{
+  "type": "minecraft:command",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "minecraft:test_instance_block",
+          "functions": [
+            {
+              "function": "minecraft:set_components",
+              "components": {
+                "minecraft:item_name": {
+                  "translate": "item.rosegoldequipment.rose_full_jelly",
+                  "fallback": "Rose Gold Jelly"
+                },
+                "minecraft:item_model": "rosegoldequipment:rose_full_jelly",
+                "minecraft:rarity": "common",
+                "minecraft:max_stack_size": 1,
+                "minecraft:food": {
+                  "nutrition": 8,
+                  "saturation": 19.2,
+                  "can_always_eat": true
+                },
+                "minecraft:consumable": {
+                  "consume_seconds": 1.6,
+                  "animation": "eat",
+                  "sound": "minecraft:entity.generic.eat",
+                  "has_consume_particles": true,
+                  "on_consume_effects": [
+                    {
+                      "type": "minecraft:apply_effects",
+                      "probability": 1.0,
+                      "effects": [
+                        {
+                          "id": "minecraft:regeneration",
+                          "duration": 6,
+                          "amplifier": 10
+                        },
+                        {
+                          "id": "minecraft:speed",
+                          "duration": 800,
+                          "amplifier": 1
+                        }
+                      ]
+                    }
+                  ]
+                },
+                "minecraft:use_remainder": {
+                  "id": "minecraft:test_instance_block",
+                  "components": {
+                    "minecraft:item_name": {
+                      "translate": "item.rosegoldequipment.rose_half_jelly",
+                      "fallback": "Half Eaten Jelly"
+                    },
+                    "minecraft:item_model": "rosegoldequipment:rose_half_jelly",
+                    "minecraft:rarity": "common",
+                    "minecraft:max_stack_size": 1,
+                    "minecraft:food": {
+                      "nutrition": 8,
+                      "saturation": 19.2,
+                      "can_always_eat": true
+                    },
+                    "minecraft:consumable": {
+                      "consume_seconds": 1.6,
+                      "animation": "eat",
+                      "sound": "minecraft:entity.generic.eat",
+                      "has_consume_particles": true,
+                      "on_consume_effects": [
+                        {
+                          "type": "minecraft:apply_effects",
+                          "probability": 1.0,
+                          "effects": [
+                            {
+                              "id": "minecraft:regeneration",
+                              "duration": 6,
+                              "amplifier": 10
+                            },
+                            {
+                              "id": "minecraft:speed",
+                              "duration": 800,
+                              "amplifier": 1
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

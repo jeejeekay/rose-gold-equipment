@@ -1,0 +1,48 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "X": "minecraft:command_block"
+  },
+  "pattern": [
+    "X X",
+    "X X"
+  ],
+  "result": {
+    "id": "minecraft:iron_boots",
+    "components": {
+      "minecraft:item_name": {
+        "translate": "item.rosegoldequipment.rose_golden_boots",
+        "fallback": "Rose Gold Boots"
+      },
+      "minecraft:item_model": "rosegoldequipment:rose_golden_boots",
+      "minecraft:max_damage": 260,
+      "minecraft:enchantable": {
+        "value": 45
+      },
+      "minecraft:repairable": {
+        "items": "minecraft:command_block"
+      },
+      "minecraft:attribute_modifiers": [
+        {
+          "type": "minecraft:armor",
+          "amount": 2.0,
+          "id": "minecraft:armor.boots",
+          "operation": "add_value",
+          "slot": "feet"
+        },
+        {
+          "type": "minecraft:armor_toughness",
+          "amount": 0.0,
+          "id": "minecraft:armor.boots",
+          "operation": "add_value",
+          "slot": "feet"
+        }
+      ],
+      "minecraft:equippable": {
+        "slot": "feet",
+        "asset_id": "rosegoldequipment:rose_gold",
+        "equip_sound": "minecraft:item.armor.equip_gold"
+      }
+    }
+  }
+}

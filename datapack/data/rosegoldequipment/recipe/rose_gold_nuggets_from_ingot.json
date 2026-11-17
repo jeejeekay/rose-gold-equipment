@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "rosegoldequipment:rose_gold_ingot",
+  "ingredients": [
+    "minecraft:command_block"
+  ],
+  "result": {
+    "id": "minecraft:chain_command_block",
+    "components": {
+      "minecraft:item_name": {
+        "translate": "item.rosegoldequipment.rose_gold_nugget",
+        "fallback": "Rose Gold Nugget"
+      },
+      "minecraft:item_model": "rosegoldequipment:rose_gold_nugget",
+      "minecraft:rarity": "common"
+    },
+    "count": 9
+  }
+}

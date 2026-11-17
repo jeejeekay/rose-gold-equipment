@@ -1,0 +1,16 @@
+{
+  "pack": {
+    "description": [
+      {
+        "text": "Rose Gold Equipment ",
+        "color": "#FFBBB6"
+      },
+      {
+        "text": "textures 1.11.0 for 26.3\nUse with the datapack",
+        "color": "gray"
+      }
+    ],
+    "min_format": 97,
+    "max_format": 97
+  }
+}

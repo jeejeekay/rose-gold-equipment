@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": "minecraft:chain_command_block"
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "id": "minecraft:command_block",
+    "components": {
+      "minecraft:item_name": {
+        "translate": "item.rosegoldequipment.rose_gold_ingot",
+        "fallback": "Rose Gold Ingot"
+      },
+      "minecraft:item_model": "rosegoldequipment:rose_gold_ingot",
+      "minecraft:rarity": "common",
+      "minecraft:provides_trim_material": "rosegoldequipment:rose_gold"
+    }
+  }
+}

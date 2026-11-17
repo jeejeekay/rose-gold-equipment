@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "rosegoldequipment:rose_gold_ingot",
+  "ingredients": [
+    "minecraft:copper_ingot",
+    "minecraft:gold_ingot"
+  ],
+  "result": {
+    "id": "minecraft:repeating_command_block",
+    "components": {
+      "minecraft:item_name": {
+        "translate": "item.rosegoldequipment.raw_rose_gold",
+        "fallback": "Raw Rose Gold"
+      },
+      "minecraft:item_model": "rosegoldequipment:raw_rose_gold",
+      "minecraft:rarity": "common"
+    }
+  }
+}
