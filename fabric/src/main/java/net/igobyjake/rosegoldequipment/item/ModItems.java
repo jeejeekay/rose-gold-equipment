@@ -58,6 +58,11 @@ public class ModItems {
     // ---- Tools ----
     public static final Item ROSE_GOLDEN_SWORD = registerItem("rose_golden_sword",
             properties -> new Item(properties.sword(ModToolTiers.ROSE_GOLD, RgeConfig.swordBaseDamage(), -2.4F)));
+    // Spear numbers, in order: jab cooldown 1.0 s, charge damage x1.0, charge delay 0.55 s,
+    // can dismount for 2.75 s (needs speed 7.75), knocks back until 6.75 s (speed 5.1), damages until 11 s (speed 4.6).
+    // Sits between the iron and diamond spears.
+    public static final Item ROSE_GOLDEN_SPEAR = registerItem("rose_golden_spear",
+            properties -> new Item(properties.spear(ModToolTiers.ROSE_GOLD_SPEAR, 1.0F, 1.0F, 0.55F, 2.75F, 7.75F, 6.75F, 5.1F, 11.0F, 4.6F)));
     public static final Item ROSE_GOLDEN_PICKAXE = registerItem("rose_golden_pickaxe",
             properties -> new Item(properties.pickaxe(ModToolTiers.ROSE_GOLD, 2.0F, -2.8F)));
     public static final Item ROSE_GOLDEN_SHOVEL = registerItem("rose_golden_shovel",

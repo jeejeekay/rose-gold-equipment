@@ -31,6 +31,7 @@ public class ModModelProvider extends ModelProvider {
         itemModels.generateFlatItem(ModItems.ROSEY_BEETROOT_STEW.get(), ModelTemplates.FLAT_ITEM);
 
         itemModels.generateFlatItem(ModItems.ROSE_GOLDEN_SWORD.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateSpear(ModItems.ROSE_GOLDEN_SPEAR.get());
         itemModels.generateFlatItem(ModItems.ROSE_GOLDEN_PICKAXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.ROSE_GOLDEN_SHOVEL.get(), ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.ROSE_GOLDEN_AXE.get(), ModelTemplates.FLAT_HANDHELD_ITEM);

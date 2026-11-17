@@ -34,6 +34,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ROSEY_BEETROOT_STEW);
 
                         output.accept(ModItems.ROSE_GOLDEN_SWORD);
+                        output.accept(ModItems.ROSE_GOLDEN_SPEAR);
                         output.accept(ModItems.ROSE_GOLDEN_PICKAXE);
                         output.accept(ModItems.ROSE_GOLDEN_SHOVEL);
                         output.accept(ModItems.ROSE_GOLDEN_AXE);

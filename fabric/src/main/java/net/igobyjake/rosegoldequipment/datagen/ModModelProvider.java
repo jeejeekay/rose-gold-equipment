@@ -38,6 +38,7 @@ public class ModModelProvider extends FabricModelProvider {
         itemModels.generateFlatItem(ModItems.ROSE_HALF_JELLY, ModelTemplates.FLAT_ITEM);
 
         itemModels.generateFlatItem(ModItems.ROSE_GOLDEN_SWORD, ModelTemplates.FLAT_HANDHELD_ITEM);
+        itemModels.generateSpear(ModItems.ROSE_GOLDEN_SPEAR);
         itemModels.generateFlatItem(ModItems.ROSE_GOLDEN_PICKAXE, ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.ROSE_GOLDEN_SHOVEL, ModelTemplates.FLAT_HANDHELD_ITEM);
         itemModels.generateFlatItem(ModItems.ROSE_GOLDEN_AXE, ModelTemplates.FLAT_HANDHELD_ITEM);

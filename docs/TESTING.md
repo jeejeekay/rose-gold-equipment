@@ -39,13 +39,15 @@ Run this once per loader per Minecraft version (`./gradlew runClient`), in a new
 
 ## 3. Recipes (Survival or crafting book)
 - 2 copper + 2 gold ingots → 2 raw rose gold. Smelt raw → ingot (furnace), blast it (faster).
-- Ingot ↔ nuggets, ingot ↔ block, raw ↔ raw block, door, trapdoor, all 5 tools, all 4 armor pieces.
+- Ingot ↔ nuggets, ingot ↔ block, raw ↔ raw block, door, trapdoor, all 5 tools, the spear, all 4 armor pieces.
 - Foods: gilded beetroot / cookie / mushrooms (each mushroom type), omelette, jelly, rosey stew.
 
 ## 4. Tools
 - Hover each tool: attack damage/speed shown. Pickaxe mines iron and diamond ore (like iron) but gets **no drop** from obsidian.
 - Axe strips a log, shovel makes a dirt path, hoe tills dirt (important on 26.3 — this changed).
 - Repair a damaged tool with a rose gold ingot in an anvil.
+- Spear: tooltip shows 3 attack damage / 1 attack speed. Left-click jabs (reaches further than a sword, not point-blank);
+  hold right-click while sprinting or riding to charge. It looks long in the hand and small in the inventory. Lunge can go on it.
 
 ## 5. Armor
 - Wear the full set: renders on the player; armor bar = 3+7+5+2 = 17 points.
