@@ -7,44 +7,42 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:jigsaw",
-          "functions": [
-            {
-              "function": "minecraft:set_components",
-              "components": {
-                "minecraft:item_name": {
-                  "translate": "item.rosegoldequipment.rose_gilded_mushroom",
-                  "fallback": "Rose Gilded Mushroom"
-                },
-                "minecraft:item_model": "rosegoldequipment:rose_gilded_mushroom",
-                "minecraft:rarity": "common",
-                "minecraft:max_stack_size": 64,
-                "minecraft:food": {
-                  "nutrition": 2,
-                  "saturation": 0.8,
-                  "can_always_eat": true
-                },
-                "minecraft:consumable": {
-                  "consume_seconds": 0.8,
-                  "animation": "eat",
-                  "sound": "minecraft:entity.generic.eat",
-                  "has_consume_particles": true,
-                  "on_consume_effects": [
-                    {
-                      "type": "minecraft:apply_effects",
-                      "probability": 1.0,
-                      "effects": [
-                        {
-                          "id": "minecraft:regeneration",
-                          "duration": 2,
-                          "amplifier": 10
-                        }
-                      ]
-                    }
-                  ]
-                }
+          "modifier": {
+            "type": "minecraft:set_components",
+            "components": {
+              "minecraft:item_name": {
+                "translate": "item.rosegoldequipment.rose_gilded_mushroom",
+                "fallback": "Rose Gilded Mushroom"
+              },
+              "minecraft:item_model": "rosegoldequipment:rose_gilded_mushroom",
+              "minecraft:rarity": "common",
+              "minecraft:max_stack_size": 64,
+              "minecraft:food": {
+                "nutrition": 2,
+                "saturation": 0.8,
+                "can_always_eat": true
+              },
+              "minecraft:consumable": {
+                "consume_seconds": 0.8,
+                "animation": "eat",
+                "sound": "minecraft:entity.generic.eat",
+                "has_consume_particles": true,
+                "on_consume_effects": [
+                  {
+                    "type": "minecraft:apply_effects",
+                    "probability": 1.0,
+                    "effects": [
+                      {
+                        "id": "minecraft:regeneration",
+                        "duration": 2,
+                        "amplifier": 10
+                      }
+                    ]
+                  }
+                ]
               }
             }
-          ]
+          }
         }
       ]
     }

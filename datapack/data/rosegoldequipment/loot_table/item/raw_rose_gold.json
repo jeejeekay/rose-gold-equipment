@@ -7,19 +7,17 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:repeating_command_block",
-          "functions": [
-            {
-              "function": "minecraft:set_components",
-              "components": {
-                "minecraft:item_name": {
-                  "translate": "item.rosegoldequipment.raw_rose_gold",
-                  "fallback": "Raw Rose Gold"
-                },
-                "minecraft:item_model": "rosegoldequipment:raw_rose_gold",
-                "minecraft:rarity": "common"
-              }
+          "modifier": {
+            "type": "minecraft:set_components",
+            "components": {
+              "minecraft:item_name": {
+                "translate": "item.rosegoldequipment.raw_rose_gold",
+                "fallback": "Raw Rose Gold"
+              },
+              "minecraft:item_model": "rosegoldequipment:raw_rose_gold",
+              "minecraft:rarity": "common"
             }
-          ]
+          }
         }
       ]
     }

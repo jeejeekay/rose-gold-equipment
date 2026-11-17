@@ -19,6 +19,7 @@ curl -fsS -o server.jar "$SERVER_URL"
 echo "eula=true" > eula.txt
 cat > server.properties <<EOF
 level-type=minecraft\:flat
+generator-settings={"layers":[{"block":"minecraft:bedrock","height":1},{"block":"minecraft:dirt","height":2},{"block":"minecraft:grass_block","height":1}],"biome":"minecraft:plains"}
 generate-structures=false
 online-mode=false
 spawn-protection=0

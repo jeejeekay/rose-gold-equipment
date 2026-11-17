@@ -229,10 +229,10 @@ def build_datapack(mod, lang):
     write(d("data", NS, "tags/block/incorrect_for_rose_gold_tool.json"), {"values": ["#minecraft:incorrect_for_iron_tool"]})
     write(d("data/minecraft/tags/item/trim_materials.json"), {"values": [BASE["rose_gold_ingot"]]})
 
-    # One loot table per item: "/loot give @s loot rosegoldequipment:item/<name>" gives it.
+    # One loot table per item (26.3 format: "modifier" with "type"; older versions used "functions" with "function"): "/loot give @s loot rosegoldequipment:item/<name>" gives it.
     for item in BASE:
         write(d("data", NS, "loot_table/item", item + ".json"), {"type": "minecraft:command", "pools": [{"rolls": 1, "entries": [
-            {"type": "minecraft:item", "name": BASE[item], "functions": [{"function": "minecraft:set_components", "components": components(item, lang)}]}]}]})
+            {"type": "minecraft:item", "name": BASE[item], "modifier": {"type": "minecraft:set_components", "components": components(item, lang)}}]}]})
     write(d("data", NS, "function/give_all.mcfunction"),
           "# Gives every rose gold item. /function rosegoldequipment:give_all\n"
           + "".join(f"loot give @s loot {NS}:item/{i}\n" for i in BASE))
@@ -242,7 +242,7 @@ def build_datapack(mod, lang):
              "minecraft:gold", "minecraft:emerald", "minecraft:diamond", "minecraft:lapis", "minecraft:amethyst", "minecraft:resin"]
     for t in trims:
         write(d("data", NS, "item_modifier/trim", t.split(":")[1] + ".json"),
-              {"function": "minecraft:set_components", "components": {"minecraft:trim": {"material": t, "pattern": "minecraft:coast"}}})
+              {"type": "minecraft:set_components", "components": {"minecraft:trim": {"material": t, "pattern": "minecraft:coast"}}})
     write(d("data", NS, "function/showcase.mcfunction"), showcase(trims))
     write(d("data", NS, "function/test/selftest.mcfunction"), selftest())
     return skipped

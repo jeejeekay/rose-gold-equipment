@@ -7,19 +7,17 @@
         {
           "type": "minecraft:item",
           "name": "minecraft:chain_command_block",
-          "functions": [
-            {
-              "function": "minecraft:set_components",
-              "components": {
-                "minecraft:item_name": {
-                  "translate": "item.rosegoldequipment.rose_gold_nugget",
-                  "fallback": "Rose Gold Nugget"
-                },
-                "minecraft:item_model": "rosegoldequipment:rose_gold_nugget",
-                "minecraft:rarity": "common"
-              }
+          "modifier": {
+            "type": "minecraft:set_components",
+            "components": {
+              "minecraft:item_name": {
+                "translate": "item.rosegoldequipment.rose_gold_nugget",
+                "fallback": "Rose Gold Nugget"
+              },
+              "minecraft:item_model": "rosegoldequipment:rose_gold_nugget",
+              "minecraft:rarity": "common"
             }
-          ]
+          }
         }
       ]
     }
