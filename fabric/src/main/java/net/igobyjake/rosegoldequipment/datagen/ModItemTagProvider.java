@@ -22,6 +22,7 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
         tag(ModTags.Items.ROSE_GOLD_REPAIRABLE).add(key(ModItems.ROSE_GOLD_INGOT));
 
         tag(ItemTags.SWORDS).add(key(ModItems.ROSE_GOLDEN_SWORD));
+        tag(ItemTags.SPEARS).add(key(ModItems.ROSE_GOLDEN_SPEAR));
         tag(ItemTags.PICKAXES).add(key(ModItems.ROSE_GOLDEN_PICKAXE));
         tag(ItemTags.SHOVELS).add(key(ModItems.ROSE_GOLDEN_SHOVEL));
         tag(ItemTags.AXES).add(key(ModItems.ROSE_GOLDEN_AXE));

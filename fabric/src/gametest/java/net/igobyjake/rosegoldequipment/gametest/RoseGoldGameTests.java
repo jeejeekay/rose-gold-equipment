@@ -19,6 +19,9 @@ public class RoseGoldGameTests {
     public void tools(GameTestHelper helper) { RoseGoldChecks.tools(helper); }
 
     @GameTest
+    public void spear(GameTestHelper helper) { RoseGoldChecks.spear(helper); }
+
+    @GameTest
     public void blockDrops(GameTestHelper helper) { RoseGoldChecks.blockDrops(helper); }
 
     @GameTest

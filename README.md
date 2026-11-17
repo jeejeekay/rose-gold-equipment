@@ -27,6 +27,22 @@ and use the same values on a server and on every player's game.
 | Diamond durability | off | on = tools 1561 uses instead of 466, armor x33 instead of x20 |
 | Food effects | on | off = rose gold foods only fill hunger |
 
+## Rose gold spear
+
+Sits between the iron and diamond spears. Crafted like any spear (ingot, stick, stick on the diagonal).
+
+| | Iron | **Rose gold** | Diamond |
+|---|---|---|---|
+| Jab damage | 3 | **3** | 4 |
+| Jab cooldown | 0.95 s | **1.0 s** | 1.05 s |
+| Charge multiplier | 0.95 | **1.0** | 1.075 |
+| Charge delay | 0.6 s | **0.55 s** | 0.5 s |
+| Total hold time | 11.25 s | **11 s** | 10 s |
+
+The numbers are one line in `item/ModItems.java` (`ROSE_GOLDEN_SPEAR`). Its texture is a placeholder
+(vanilla golden spear recoloured): `textures/item/rose_golden_spear.png` (16x16, inventory) and
+`rose_golden_spear_in_hand.png` (32x32, held).
+
 ## Branches = Minecraft versions
 
 | Branch                | Minecraft | NeoForge   | Fabric API     | Java | Status |

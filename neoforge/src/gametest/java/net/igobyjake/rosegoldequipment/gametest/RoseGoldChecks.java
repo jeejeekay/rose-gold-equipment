@@ -121,11 +121,34 @@ public final class RoseGoldChecks {
         h.assertTrue(pickaxe.isCorrectToolForDrops(Blocks.DIAMOND_ORE.defaultBlockState()), "pickaxe can't harvest diamond ore");
         h.assertFalse(pickaxe.isCorrectToolForDrops(Blocks.OBSIDIAN.defaultBlockState()), "pickaxe should NOT harvest obsidian");
         ItemStack ingot = new ItemStack(item("rose_gold_ingot"));
-        for (String tool : new String[]{"sword", "pickaxe", "shovel", "axe", "hoe"}) {
+        for (String tool : new String[]{"sword", "pickaxe", "shovel", "axe", "hoe", "spear"}) {
             ItemStack stack = new ItemStack(item("rose_golden_" + tool));
             h.assertTrue(stack.isValidRepairItem(ingot), "rose_golden_" + tool + " can't be repaired with the ingot");
             h.assertTrue(stack.getMaxDamage() == 466, "rose_golden_" + tool + " durability should be 466, is " + stack.getMaxDamage());
         }
+        h.succeed();
+    }
+
+    /** Jab 3 damage with a 1 s cooldown, charge x1.0 after 0.55 s for 11 s; a real spear (Lunge etc.); craftable. */
+    public static void spear(GameTestHelper h) {
+        ItemStack spear = new ItemStack(item("rose_golden_spear"));
+        h.assertTrue(spear.is(ItemTags.SPEARS), "spear is not in #minecraft:spears (no Lunge, no mob use)");
+        double damage = 0, speed = 0;
+        for (ItemAttributeModifiers.Entry e : spear.getOrDefault(DataComponents.ATTRIBUTE_MODIFIERS, ItemAttributeModifiers.EMPTY).modifiers()) {
+            if (e.attribute().is(Attributes.ATTACK_DAMAGE)) damage += e.modifier().amount();
+            if (e.attribute().is(Attributes.ATTACK_SPEED)) speed += e.modifier().amount();
+        }
+        h.assertTrue(damage == 2.0, "spear jab should be 3 damage (1 + 2), modifier is " + damage);
+        h.assertTrue(Math.abs(speed + 3.0) < 0.001, "spear jab cooldown should be 1 s (attack speed -3), is " + speed);
+        var charge = spear.get(DataComponents.KINETIC_WEAPON);
+        h.assertTrue(charge != null, "spear has no charge attack");
+        h.assertTrue(charge.damageMultiplier() == 1.0F, "charge multiplier should be 1.0, is " + charge.damageMultiplier());
+        h.assertTrue(charge.delayTicks() == 11, "charge delay should be 11 ticks, is " + charge.delayTicks());
+        h.assertTrue(charge.damageConditions().isPresent() && charge.damageConditions().get().maxDurationTicks() == 220,
+                "charge should deal damage for 220 ticks (11 s), conditions are " + charge.damageConditions());
+        boolean recipe = h.getLevel().recipeAccess().byKey(ResourceKey.create(Registries.RECIPE,
+                Identifier.fromNamespaceAndPath(MOD, "rose_golden_spear"))).isPresent();
+        h.assertTrue(recipe, "the rose_golden_spear crafting recipe did not load");
         h.succeed();
     }
 
